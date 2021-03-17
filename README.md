@@ -1,6 +1,5 @@
 # NovosParceiros
 
-# Introdução
 Estamos muito felizes por você está aqui!
 Através da documentação abaixo você será capaz de utilizar os serviços Multipagos que foram construídos para facilitar a consulta e a transição de informações entre suas arrecações e o grupo Claro.
 
@@ -27,7 +26,7 @@ Ocorre quando um ou mais dados foram encaminhados de forma incorreta ou fora do 
 
 # SandBox
 Disponibilizamos um ambiente SandBox para que você possa realizar os testes. Fique à vontade para usar!
-- Url SandBox: https://multipagos-sandbox.com.br
+- Url SandBox: https://sandbox.multipagos.com.br
 
 
 # Autenticação
@@ -36,7 +35,7 @@ Processo de obtenção de token que irá garantir a autorização na utilizaçã
 ```html
 {
   "pdv": "1",
-  "password": "8FDC63EE-EC4E-416B-80F6-2F51EE5DC6CD"
+  "terminal": "8FDC63EE-EC4E-416B-80F6-2F51EE5DC6CD"
 }
 ```
 
@@ -74,8 +73,8 @@ Após a realização de uma venda, ou até um conjunto de vendas,
 Retorno em caso de sucesso:
 ```html
 {
-    "isValid": true,
-    "msg": "Pagamento recebido e está sendo processado."
+    "sucesso": true,
+    "mensagem": "Pagamento recebido e está sendo processado."
 }
 ```
 
@@ -89,7 +88,7 @@ Para verificar se existem contas na Claro ou na Net de seus clientes, utilize:
   "PosId": 1,
   "TerminalId": "8FDC63EE-EC4E-416B-80F6-2F51EE5DC6CD",
   "NumSequencial": 10,
-  "EmpresaId": 8,
+  "EmpresaId": 4,
   "IdentificacaoCliente": "12345678912",
   "Contrato": "123"
 }
@@ -103,9 +102,9 @@ Retorno em caso de sucesso:
     "AtualizacaoDisponivel": false,
     "DadosConsulta": {
         "Empresa": 8,
-        "IdentificacaoCliente": "12345678912",
-        "SucessoConsulta": false,
-        "DescricaoAuxiliar": "Não foi possivel realizar a chamada ao servidor Net/Claro Invoices\nDetalhes: O servidor remoto retornou um erro: (400) Solicitação Incorreta.",
+        "IdentificacaoCliente": "telephoneNumber::12345678912",
+        "SucessoConsulta": true,
+        "DescricaoAuxiliar": "Nenhuma fatura em aberto foi encontrada",
         "Pendencias": null,
         "Contratos": null
     }
