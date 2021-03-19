@@ -38,7 +38,7 @@ Processo de obtenção de token que irá garantir a autorização na utilizaçã
   "terminal": "8FDC63EE-EC4E-416B-80F6-2F51EE5DC777"
 }
 ```
-*Pdv e Terminal serão fornecidos.
+**Pdv e Terminal serão fornecidos.**
 
 Retorno em caso de sucesso:
 ```html
@@ -79,7 +79,7 @@ Após a realização de uma venda, ou até um conjunto de vendas,
    }
 ]
 ```
-*Orientação dos campos:
+**Orientação dos campos:**
 - CodigoConvenio: Definido pelo banco - Alfanumérico(20)
 - CodigoBanco: Código do Banco na câmara de compensação - Inteiro(3)
 - DomicilioBancario:
@@ -90,32 +90,32 @@ Após a realização de uma venda, ou até um conjunto de vendas,
 - VrTarifa: Valor da tarifa acordada contratualmente - Decimal(10) + V(99)
 - CodigoAgenciaArrecadadora: Código da agência arrecadadora - Alfanumérico(8) 
 - FormaArrecadacaoCaptura: Forma de arrecadação - Alfanumérico(1) podendo ser:
-1 – Guichê de Caixa com fatura/guia de arrecadação
-2 – Arrecadação Eletrônica com fatura/guia de arrecadação (terminais de auto - atendimento, ATM, home banking)
-3 – Internet/mobile com fatura/guia de arrecadação
-4 – Outros meios com fatura/guia de arrecadação
-5 – Correspondentes bancários com fatura/guia de arrecadação
-6 – Telefone com fatura/guia de arrecadação
-7 – Casas lotéricas com fatura/guia de arrecadação
-8 - Cartão/Multibanco com fatura/guia de arrecadação
-9 – PIX com fatura/guia de arrecadação
-a – Guichê de Caixa sem fatura/guia de arrecadação
-b – Arrecadação Eletrônica sem fatura/guia de arrecadação (terminais de auto - atendimento, ATM, home banking)
-c – Internet/mobile sem fatura/guia de arrecadação
-d – Correspondentes bancários sem fatura/guia de arrecadação
-e – Telefone sem fatura/guia de arrecadação
-f – Outros meios sem fatura/guia de arrecadação
-g – Casas lotéricas sem fatura/guia de arrecadação
-h – Cartão/Multibanco sem fatura/guia de arrecadação
-i – PIX sem fatura/guia de arrecadação 
+ - 1 – Guichê de Caixa com fatura/guia de arrecadação
+ - 2 – Arrecadação Eletrônica com fatura/guia de arrecadação (terminais de auto - atendimento, ATM, home banking)
+ - 3 – Internet/mobile com fatura/guia de arrecadação
+ - 4 – Outros meios com fatura/guia de arrecadação
+ - 5 – Correspondentes bancários com fatura/guia de arrecadação
+ - 6 – Telefone com fatura/guia de arrecadação
+ - 7 – Casas lotéricas com fatura/guia de arrecadação
+ - 8 - Cartão/Multibanco com fatura/guia de arrecadação
+ - 9 – PIX com fatura/guia de arrecadação
+ - a – Guichê de Caixa sem fatura/guia de arrecadação
+ - b – Arrecadação Eletrônica sem fatura/guia de arrecadação (terminais de auto - atendimento, ATM, home banking)
+ - c – Internet/mobile sem fatura/guia de arrecadação
+ - d – Correspondentes bancários sem fatura/guia de arrecadação
+ - e – Telefone sem fatura/guia de arrecadação
+ - f – Outros meios sem fatura/guia de arrecadação
+ - g – Casas lotéricas sem fatura/guia de arrecadação
+ - h – Cartão/Multibanco sem fatura/guia de arrecadação
+ - i – PIX sem fatura/guia de arrecadação 
 - NumeroAutenticacao: Número de autenticação caixa ou código de transação - Alfanumérico(23)
 - FormaPagamento: Forma de pagamento - Inteiro(1) podendo ser:
-1 – Dinheiro
-2 – Cheque
-3 – Não identificado/outras formas
-4 – Cartão de crédito
-5 – Cartão/Multibanco
-6 – Débito em conta
+ - 1 – Dinheiro
+ - 2 – Cheque
+ - 3 – Não identificado/outras formas
+ - 4 – Cartão de crédito
+ - 5 – Cartão/Multibanco
+ - 6 – Débito em conta
 
 Retorno em caso de sucesso:
 ```html
