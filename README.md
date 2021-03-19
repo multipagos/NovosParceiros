@@ -34,16 +34,25 @@ Processo de obtenção de token que irá garantir a autorização na utilizaçã
 - POST /api/Multipagos/Token
 ```html
 {
-  "pdv": "1",
-  "terminal": "8FDC63EE-EC4E-416B-80F6-2F51EE5DC6CD"
+  "pdv": "123",
+  "terminal": "8FDC63EE-EC4E-416B-80F6-2F51EE5DC777"
 }
 ```
+*Pdv e Terminal serão fornecidos.
 
 Retorno em caso de sucesso:
 ```html
 {
     "sucesso": true,
     "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6IjEiLCJuYmYiOjE2MTU5MDg0MjQsImV4cCI6MTYxNTkwODQ4NCwiaWF0IjoxNjE1OTA4NDI0fQ.Iy7m-U1KPomjQTh2tN3X5gGXn6LvE3W4H3dBRnc5-7s"
+}
+```
+
+Retorno em caso de falha:
+```html
+{
+    "sucesso": false,
+    "message": "Pdv ou Terminal inválidos."
 }
 ```
 
@@ -55,8 +64,8 @@ Após a realização de uma venda, ou até um conjunto de vendas,
 ```html
 [
    {
-    "CodigoConvenio": "212073",                                   
-    "CodigoBanco": "212",
+    "CodigoConvenio": "1",                                   
+    "CodigoBanco": "1",
     "DomicilioBancario": "00000000000028847008",
     "DataPagamento": "2020-08-11",
     "DataCredito": "2020-08-11",
@@ -70,6 +79,44 @@ Após a realização de uma venda, ou até um conjunto de vendas,
    }
 ]
 ```
+*Orientação dos campos:
+- CodigoConvenio: Definido pelo banco - Alfanumérico(20)
+- CodigoBanco: Código do Banco na câmara de compensação - Inteiro(3)
+- DomicilioBancario:
+- DataPagamento: Data da efetivação do pagamento em sua plataforma - formato yyyy-MM-dd
+- DataCredito: Data da entrada do crédito - formato yyyy-MM-dd
+- CodigoBarras: Código de Barras da fatura - Alfanumérico(44)
+- ValorRecebido: Valor efetivamente recebido - Decimal(10) + V(99)
+- VrTarifa: Valor da tarifa acordada contratualmente - Decimal(10) + V(99)
+- CodigoAgenciaArrecadadora: Código da agência arrecadadora - Alfanumérico(8) 
+- FormaArrecadacaoCaptura: Forma de arrecadação - Alfanumérico(1) podendo ser:
+1 – Guichê de Caixa com fatura/guia de arrecadação
+2 – Arrecadação Eletrônica com fatura/guia de arrecadação (terminais de auto - atendimento, ATM, home banking)
+3 – Internet/mobile com fatura/guia de arrecadação
+4 – Outros meios com fatura/guia de arrecadação
+5 – Correspondentes bancários com fatura/guia de arrecadação
+6 – Telefone com fatura/guia de arrecadação
+7 – Casas lotéricas com fatura/guia de arrecadação
+8 - Cartão/Multibanco com fatura/guia de arrecadação
+9 – PIX com fatura/guia de arrecadação
+a – Guichê de Caixa sem fatura/guia de arrecadação
+b – Arrecadação Eletrônica sem fatura/guia de arrecadação (terminais de auto - atendimento, ATM, home banking)
+c – Internet/mobile sem fatura/guia de arrecadação
+d – Correspondentes bancários sem fatura/guia de arrecadação
+e – Telefone sem fatura/guia de arrecadação
+f – Outros meios sem fatura/guia de arrecadação
+g – Casas lotéricas sem fatura/guia de arrecadação
+h – Cartão/Multibanco sem fatura/guia de arrecadação
+i – PIX sem fatura/guia de arrecadação 
+- NumeroAutenticacao: Número de autenticação caixa ou código de transação - Alfanumérico(23)
+- FormaPagamento: Forma de pagamento - Inteiro(1) podendo ser:
+1 – Dinheiro
+2 – Cheque
+3 – Não identificado/outras formas
+4 – Cartão de crédito
+5 – Cartão/Multibanco
+6 – Débito em conta
+
 Retorno em caso de sucesso:
 ```html
 {
