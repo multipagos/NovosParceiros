@@ -76,6 +76,8 @@ Após a realização de uma venda em sua plataforma, envie as seguintes informa�
    "NumeroAutenticacao": "36961752",
    "FormaPagamento": "1"
  }
+
+*Não esqueça de enviar o token obtido na autenticação como 'Bearer Token'
 ```
 **Orientação dos campos:**
 - CodigoConvenio: Definido pelo banco - Alfanumérico(20)
