@@ -90,7 +90,7 @@ Após a realização de uma venda, ou até um conjunto de vendas,
 - VrTarifa: Valor da tarifa acordada contratualmente - Decimal(10) + V(99)
 - CodigoAgenciaArrecadadora: Código da agência arrecadadora - Alfanumérico(8) 
 - FormaArrecadacaoCaptura: Forma de arrecadação - Alfanumérico(1) podendo ser:
- - 1 – Guichê de Caixa com fatura/guia de arrecadação
+  - 1 – Guichê de Caixa com fatura/guia de arrecadação
  - 2 – Arrecadação Eletrônica com fatura/guia de arrecadação (terminais de auto - atendimento, ATM, home banking)
  - 3 – Internet/mobile com fatura/guia de arrecadação
  - 4 – Outros meios com fatura/guia de arrecadação
