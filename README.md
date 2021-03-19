@@ -163,6 +163,33 @@ Retorno em caso de sucesso:
     "AtualizacaoDisponivel": false,
     "DadosConsulta": {
         "Empresa": 8,
+        "IdentificacaoCliente": "telephoneNumber::21987654321",
+        "SucessoConsulta": true,
+        "DescricaoAuxiliar": "OK",
+        "Pendencias": [
+            {
+                "Vencimento": "2021-01-01T00:00:00-03:00",
+                "Fatura": "846000000000362007101022748063700980021196891234",
+                "Valor": 31.69,
+                "Empresa": 8,
+                "PendenciaOriginal": "<?xml version=\"1.0\"?>\r\n<NetClaroFatura xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\">\r\n  <paymentDueDate>2021-01-01T00:00:00-03:00</paymentDueDate>\r\n  <billCode>846000000000362007101022748063700980021196891234</billCode>\r\n  <name>NOME DO USUÁRIO AQUI</name>\r\n  <partyIdentificationNumber>12345678912</partyIdentificationNumber>\r\n</NetClaroFatura>"
+            }
+        ],
+        "Contratos": null
+    }
+}
+```
+
+
+Retorno em caso de não encontrar fatura em aberto:
+```html
+{
+    "PosId": 1,
+    "NumSequencial": 10,
+    "BloquearPDV": false,
+    "AtualizacaoDisponivel": false,
+    "DadosConsulta": {
+        "Empresa": 8,
         "IdentificacaoCliente": "telephoneNumber::12345678912",
         "SucessoConsulta": true,
         "DescricaoAuxiliar": "Nenhuma fatura em aberto foi encontrada",
@@ -171,5 +198,3 @@ Retorno em caso de sucesso:
     }
 }
 ```
-
-
