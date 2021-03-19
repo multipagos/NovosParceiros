@@ -58,7 +58,7 @@ Retorno em caso de falha:
 
 
 # Envio de Arrecadação
-Após a realização de uma venda, ou até um conjunto de vendas, 
+Após a realização de uma venda, ou até um conjunto de vendas, envie as seguintes informações para que possamos processar e encaminhar ao Grupo Claro.
 
 - POST /api/Multipagos/Arrecadacao
 ```html
@@ -82,7 +82,7 @@ Após a realização de uma venda, ou até um conjunto de vendas,
 **Orientação dos campos:**
 - CodigoConvenio: Definido pelo banco - Alfanumérico(20)
 - CodigoBanco: Código do Banco na câmara de compensação - Inteiro(3)
-- DomicilioBancario:
+- DomicilioBancario: Identificação da empresa/órgão no banco/agência/conta/dígito creditada - Alfanumérico(20)
 - DataPagamento: Data da efetivação do pagamento em sua plataforma - formato yyyy-MM-dd
 - DataCredito: Data da entrada do crédito - formato yyyy-MM-dd
 - CodigoBarras: Código de Barras da fatura - Alfanumérico(44)
@@ -140,6 +140,20 @@ Para verificar se existem contas na Claro ou na Net de seus clientes, utilize:
   "Contrato": "123"
 }
 ```
+**Orientação dos campos:**
+- PosId - Campo PDV enviado
+- TerminalId - Campo Terminal enviado
+- NumSequencial - Seu contador de utilização
+- EmpresaId - Referência da empresa podendo ser:
+  - 2 - NET
+  - 4 - Claro
+  - 8 - NET e Claro
+- IdentificacaoCliente - Forma de identificar o cliente podendo ser:
+  - CPF ou CNPJ para faturas NET sem pontuação. Exemplo: 12345678912
+  - Numero de celular com DDD. Exemplo: 21987654321
+- Contrato - Informação complementar de contrato do cliente com a Claro.
+
+
 Retorno em caso de sucesso:
 ```html
 {
