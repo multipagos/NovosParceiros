@@ -133,7 +133,7 @@ Para verificar se existem contas na Claro ou na Net de seus clientes, utilize:
 ```html
 {
   "PosId": 1,
-  "TerminalId": "8FDC63EE-EC4E-416B-80F6-2F51EE5DC6CD",
+  "TerminalId": "8FDC63EE-EC4E-416B-80F6-2F51EE5DC777",
   "NumSequencial": 10,
   "EmpresaId": 4,
   "IdentificacaoCliente": "12345678912",
