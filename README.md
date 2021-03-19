@@ -91,31 +91,31 @@ Após a realização de uma venda, ou até um conjunto de vendas,
 - CodigoAgenciaArrecadadora: Código da agência arrecadadora - Alfanumérico(8) 
 - FormaArrecadacaoCaptura: Forma de arrecadação - Alfanumérico(1) podendo ser:
   - 1 – Guichê de Caixa com fatura/guia de arrecadação
- - 2 – Arrecadação Eletrônica com fatura/guia de arrecadação (terminais de auto - atendimento, ATM, home banking)
- - 3 – Internet/mobile com fatura/guia de arrecadação
- - 4 – Outros meios com fatura/guia de arrecadação
- - 5 – Correspondentes bancários com fatura/guia de arrecadação
- - 6 – Telefone com fatura/guia de arrecadação
- - 7 – Casas lotéricas com fatura/guia de arrecadação
- - 8 - Cartão/Multibanco com fatura/guia de arrecadação
- - 9 – PIX com fatura/guia de arrecadação
- - a – Guichê de Caixa sem fatura/guia de arrecadação
- - b – Arrecadação Eletrônica sem fatura/guia de arrecadação (terminais de auto - atendimento, ATM, home banking)
- - c – Internet/mobile sem fatura/guia de arrecadação
- - d – Correspondentes bancários sem fatura/guia de arrecadação
- - e – Telefone sem fatura/guia de arrecadação
- - f – Outros meios sem fatura/guia de arrecadação
- - g – Casas lotéricas sem fatura/guia de arrecadação
- - h – Cartão/Multibanco sem fatura/guia de arrecadação
- - i – PIX sem fatura/guia de arrecadação 
+  - 2 – Arrecadação Eletrônica com fatura/guia de arrecadação (terminais de auto - atendimento, ATM, home banking)
+  - 3 – Internet/mobile com fatura/guia de arrecadação
+  - 4 – Outros meios com fatura/guia de arrecadação
+  - 5 – Correspondentes bancários com fatura/guia de arrecadação
+  - 6 – Telefone com fatura/guia de arrecadação
+  - 7 – Casas lotéricas com fatura/guia de arrecadação
+  - 8 - Cartão/Multibanco com fatura/guia de arrecadação
+  - 9 – PIX com fatura/guia de arrecadação
+  - a – Guichê de Caixa sem fatura/guia de arrecadação
+  - b – Arrecadação Eletrônica sem fatura/guia de arrecadação (terminais de auto - atendimento, ATM, home banking)
+  - c – Internet/mobile sem fatura/guia de arrecadação
+  - d – Correspondentes bancários sem fatura/guia de arrecadação
+  - e – Telefone sem fatura/guia de arrecadação
+  - f – Outros meios sem fatura/guia de arrecadação
+  - g – Casas lotéricas sem fatura/guia de arrecadação
+  - h – Cartão/Multibanco sem fatura/guia de arrecadação
+  - i – PIX sem fatura/guia de arrecadação 
 - NumeroAutenticacao: Número de autenticação caixa ou código de transação - Alfanumérico(23)
 - FormaPagamento: Forma de pagamento - Inteiro(1) podendo ser:
- - 1 – Dinheiro
- - 2 – Cheque
- - 3 – Não identificado/outras formas
- - 4 – Cartão de crédito
- - 5 – Cartão/Multibanco
- - 6 – Débito em conta
+  - 1 – Dinheiro
+  - 2 – Cheque
+  - 3 – Não identificado/outras formas
+  - 4 – Cartão de crédito
+  - 5 – Cartão/Multibanco
+  - 6 – Débito em conta
 
 Retorno em caso de sucesso:
 ```html
