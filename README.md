@@ -58,26 +58,24 @@ Retorno em caso de falha:
 
 
 # Envio de Arrecadação
-Após a realização de uma venda, ou até um conjunto de vendas, envie as seguintes informações para que possamos processar e encaminhar ao Grupo Claro.
+Após a realização de uma venda em sua plataforma, envie as seguintes informações para que possamos processar e encaminhar ao Grupo Claro:
 
 - POST /api/Multipagos/Arrecadacao
 ```html
-[
-   {
-    "CodigoConvenio": "1",                                   
-    "CodigoBanco": "1",
-    "DomicilioBancario": "00000000000028847008",
-    "DataPagamento": "2020-08-11",
-    "DataCredito": "2020-08-11",
-    "CodigoBarras": "84600000000036200710102274806370098002119689",
-    "ValorRecebido": 3.62,
-    "VrTarifa": 0.35,
-    "CodigoAgenciaArrecadora": "01",
-    "FormaArrecadacaoCaptura": "3",
-    "NumeroAutenticacao": "36961752",
-    "FormaPagamento": "1"
-   }
-]
+ {
+   "CodigoConvenio": "1",                                   
+   "CodigoBanco": "1",
+   "DomicilioBancario": "00000000000028847008",
+   "DataPagamento": "2020-08-11",
+   "DataCredito": "2020-08-11",
+   "CodigoBarras": "84600000000036200710102274806370098002119689",
+   "ValorRecebido": 3.62,
+   "VrTarifa": 0.35,
+   "CodigoAgenciaArrecadora": "01",
+   "FormaArrecadacaoCaptura": "3",
+   "NumeroAutenticacao": "36961752",
+   "FormaPagamento": "1"
+ }
 ```
 **Orientação dos campos:**
 - CodigoConvenio: Definido pelo banco - Alfanumérico(20)
