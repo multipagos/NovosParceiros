@@ -6,9 +6,11 @@ Através da documentação abaixo você será capaz de utilizar os serviços Mul
 Qualquer dúvida que possa ter, fique à vontade de enviar um e-mail para valniria.bandeira@multicomnet.com.br que iremos te ajudar.
 
 
+
 # SandBox
 Disponibilizamos um ambiente SandBox para que você possa realizar os testes. Fique à vontade para usar!
 - Url SandBox: https://sandbox.multipagos.com.br
+
 
 
 # Autenticação
@@ -39,26 +41,12 @@ Retorno em caso de falha:
 ```
 
 
+
 # Envio de Arrecadação
 Após a realização de uma venda em sua plataforma, envie as seguintes informações para que possamos processar e encaminhar ao Grupo Claro:
 
 - POST /api/Multipagos/Arrecadacao
 ```html
- {
-   "CodigoConvenio": "1",                                   
-   "CodigoBanco": "1",
-   "DomicilioBancario": "00000000000028847008",
-   "DataPagamento": "2020-08-11",
-   "DataCredito": "2020-08-11",
-   "CodigoBarras": "84600000000036200710102274806370098002119689",
-   "ValorRecebido": 3.62,
-   "VrTarifa": 0.35,
-   "CodigoAgenciaArrecadora": "01",
-   "FormaArrecadacaoCaptura": "3",
-   "NumeroAutenticacao": "36961752",
-   "FormaPagamento": "1"
- }
- 
   {                                  
    "DataPagamento": "2020-08-11",
    "CodigoBarras": "84600000000036200710102274806370098002119689",
@@ -109,32 +97,7 @@ Após a realização de uma venda em sua plataforma, envie as seguintes informa�
   - 5 – Cartão/Multibanco
   - 6 – Débito em conta
 
-Retorno em caso de sucesso:
-```html
-{
-    "sucesso": true,
-    "mensagem": "Pagamento recebido e está sendo processado."
-}
-```
 
-# Erros
-Entenda os principais códigos de retorno das nossas API's
-
- 
-**HTTP 401 – Unauthorized**
-Ocorre quando sua aplicação encaminhou uma credencial invalida ou inexistente.
-
-**HTTP 403 – Forbidden**
-Ocorre quando sua conta ou aplicação não tem permissão para utilizar o serviço.
-
-**HTTP 405 – Method Not Allowed**
-Ocorre quando sua aplicação efetuou a chamada utilizando um método não esperado. Neste caso verifique se o método da chamada é GET , POST ou PUT.
-
-**HTTP 415 – Cannot consume content type**
-Ocorre quando não é encaminhado o Content-Type na chamada.
-
-**HTTP 400 – Bad Request**
-Ocorre quando um ou mais dados foram encaminhados de forma incorreta ou fora do padrão. Este retorno possui um JSON ou XML no corpo da mensagem que identifica quais os erros presentes na chamada, no retorno sempre terá um código e uma mensagem descrevendo o erro.
 
 # Mensagens de retorno possíveis:
 De acordo com as informações recebidas, durante as nossas validações, podemos retornar as seguintes mensagens:
@@ -145,7 +108,6 @@ De acordo com as informações recebidas, durante as nossas validações, podemo
     "sucesso": true,
     "mensagem": "Pagamento (Número do Código de Barras de 44 caracteres) recebido e processado com sucesso."
 }
-*HTTP 200 – OK
 ```
 
 **Usuário não Autorizado**
@@ -155,7 +117,6 @@ De acordo com as informações recebidas, durante as nossas validações, podemo
     "mensagem": "Usuário não autenticado",
     "detalheErro": "O token da requisição deve ser válido"
 }
-*HTTP 401 – Unauthorized
 ```
 
 **Código Agência Arrecadora Inválido**
@@ -165,7 +126,6 @@ De acordo com as informações recebidas, durante as nossas validações, podemo
     "mensagem": "Código Agência Arrecadora inválido.",
     "detalheErro": "Código Agência Arrecadora não poder ser zero / branco."
 }
-*HTTP 200 – OK
 ```
 
 **Código da Agência arrecadadora igual a zero ou vazio**
@@ -293,6 +253,28 @@ De acordo com as informações recebidas, durante as nossas validações, podemo
     "detalheErro": "O valor do código de barras da arrecadação é diferente do valor declarado como recebido"
 }
 ```
+
+
+
+# Tipos HTTP de Erros
+Entenda os principais códigos de retorno das nossas API's
+
+ 
+**HTTP 401 – Unauthorized**
+Ocorre quando sua aplicação encaminhou uma credencial invalida ou inexistente.
+
+**HTTP 403 – Forbidden**
+Ocorre quando sua conta ou aplicação não tem permissão para utilizar o serviço.
+
+**HTTP 405 – Method Not Allowed**
+Ocorre quando sua aplicação efetuou a chamada utilizando um método não esperado. Neste caso verifique se o método da chamada é GET , POST ou PUT.
+
+**HTTP 415 – Cannot consume content type**
+Ocorre quando não é encaminhado o Content-Type na chamada.
+
+**HTTP 400 – Bad Request**
+Ocorre quando um ou mais dados foram encaminhados de forma incorreta ou fora do padrão. Este retorno possui um JSON ou XML no corpo da mensagem que identifica quais os erros presentes na chamada, no retorno sempre terá um código e uma mensagem descrevendo o erro.
+
 
 
 # Consulta de Fatura
