@@ -5,24 +5,6 @@ Através da documentação abaixo você será capaz de utilizar os serviços Mul
 
 Qualquer dúvida que possa ter, fique à vontade de enviar um e-mail para valniria.bandeira@multicomnet.com.br que iremos te ajudar.
 
-# Erros
-Entenda os principais códigos de retorno das nossas API's
-
- 
-**HTTP 401 – Unauthorized**
-Ocorre quando sua aplicação encaminhou uma credencial invalida ou inexistente.
-
-**HTTP 403 – Forbidden**
-Ocorre quando sua conta ou aplicação não tem permissão para utilizar o serviço.
-
-**HTTP 405 – Method Not Allowed**
-Ocorre quando sua aplicação efetuou a chamada utilizando um método não esperado. Neste caso verifique se o método da chamada é GET , POST ou PUT.
-
-**HTTP 415 – Cannot consume content type**
-Ocorre quando não é encaminhado o Content-Type na chamada.
-
-**HTTP 400 – Bad Request**
-Ocorre quando um ou mais dados foram encaminhados de forma incorreta ou fora do padrão. Este retorno possui um JSON ou XML no corpo da mensagem que identifica quais os erros presentes na chamada, no retorno sempre terá um código e uma mensagem descrevendo o erro.
 
 # SandBox
 Disponibilizamos um ambiente SandBox para que você possa realizar os testes. Fique à vontade para usar!
@@ -34,8 +16,8 @@ Processo de obtenção de token que irá garantir a autorização na utilizaçã
 - POST /api/Multipagos/Token
 ```html
 {
-  "pdv": "123",
-  "terminal": "8FDC63EE-EC4E-416B-80F6-2F51EE5DC777"
+  "pdv": "6000",
+  "terminal": "48B20B9C-69B9-443E-9090-A5CE730DFA76"
 }
 ```
 **Pdv e Terminal serão fornecidos.**
@@ -71,6 +53,16 @@ Após a realização de uma venda em sua plataforma, envie as seguintes informa�
    "CodigoBarras": "84600000000036200710102274806370098002119689",
    "ValorRecebido": 3.62,
    "VrTarifa": 0.35,
+   "CodigoAgenciaArrecadora": "01",
+   "FormaArrecadacaoCaptura": "3",
+   "NumeroAutenticacao": "36961752",
+   "FormaPagamento": "1"
+ }
+ 
+  {                                  
+   "DataPagamento": "2020-08-11",
+   "CodigoBarras": "84600000000036200710102274806370098002119689",
+   "ValorRecebido": 3.62,
    "CodigoAgenciaArrecadora": "01",
    "FormaArrecadacaoCaptura": "3",
    "NumeroAutenticacao": "36961752",
@@ -125,6 +117,183 @@ Retorno em caso de sucesso:
 }
 ```
 
+# Erros
+Entenda os principais códigos de retorno das nossas API's
+
+ 
+**HTTP 401 – Unauthorized**
+Ocorre quando sua aplicação encaminhou uma credencial invalida ou inexistente.
+
+**HTTP 403 – Forbidden**
+Ocorre quando sua conta ou aplicação não tem permissão para utilizar o serviço.
+
+**HTTP 405 – Method Not Allowed**
+Ocorre quando sua aplicação efetuou a chamada utilizando um método não esperado. Neste caso verifique se o método da chamada é GET , POST ou PUT.
+
+**HTTP 415 – Cannot consume content type**
+Ocorre quando não é encaminhado o Content-Type na chamada.
+
+**HTTP 400 – Bad Request**
+Ocorre quando um ou mais dados foram encaminhados de forma incorreta ou fora do padrão. Este retorno possui um JSON ou XML no corpo da mensagem que identifica quais os erros presentes na chamada, no retorno sempre terá um código e uma mensagem descrevendo o erro.
+
+# Mensagens de retorno possíveis:
+De acordo com as informações recebidas, durante as nossas validações, podemos retornar as seguintes mensagens:
+
+**Arrecadação recebida com sucesso**
+```html
+{
+    "sucesso": true,
+    "mensagem": "Pagamento (Número do Código de Barras de 44 caracteres) recebido e processado com sucesso."
+}
+*HTTP 200 – OK
+```
+
+**Usuário não Autorizado**
+```html
+{
+    "sucesso": false,
+    "mensagem": "Usuário não autenticado",
+    "detalheErro": "O token da requisição deve ser válido"
+}
+*HTTP 401 – Unauthorized
+```
+
+**Código Agência Arrecadora Inválido**
+```html
+{
+    "sucesso": false,
+    "mensagem": "Código Agência Arrecadora inválido.",
+    "detalheErro": "Código Agência Arrecadora não poder ser zero / branco."
+}
+*HTTP 200 – OK
+```
+
+**Código da Agência arrecadadora igual a zero ou vazio**
+```html
+{
+    "sucesso": false,
+    "mensagem": "Código Agência Arrecadora inválido.",
+    "detalheErro": "Código Agência Arrecadora não poder ser zero / branco."
+}
+```
+
+**Forma de arrecadação/ captura diferente das informações permitidas**
+```html
+{
+    "sucesso": false,
+    "mensagem": "Forma Arrecadação Captura inválido.",
+    "detalheErro": "Forma Arrecadação Captura não poder ser zero / branco."
+}
+```
+
+**Forma de Pagamento Inválida**
+```html
+{
+    "sucesso": false,
+    "mensagem": "Forma de Pagamento Inválida",
+    "detalheErro": "Forma de Pagamento (código inserido) Inválida."
+}
+```
+
+**Forma de Pagamento Zero ou Branco**
+```html
+{
+    "sucesso": false,
+    "mensagem": "Forma Pagamento inválido.",
+    "detalheErro": "Forma Pagamento não poder ser zero / branco."
+}
+```
+
+**Código de barras vazio**
+```html
+{
+    "sucesso": false,
+    "mensagem": "Código de Barras inválido.",
+    "detalheErro": "Código de Barras não poder ser zero / branco."
+}
+```
+
+**Código de Barras com tamanho incorreto**
+```html
+{
+    "sucesso": false,
+    "mensagem": "Código de barras inválido.",
+    "detalheErro": "Código de barras com tamanho incorreto."
+}
+```
+
+**Código de Barras zerado**
+```html
+{
+    "sucesso": false,
+    "mensagem": "Código de barras inválido.",
+    "detalheErro": "Código de barras não é uma arrecadação(0)."
+}
+```
+
+**Código de Barras com produto diferente de 8 (arrecadação)**
+```html
+{
+    "sucesso": false,
+    "mensagem": "Código de barras inválido.",
+    "detalheErro": "Código de barras não é uma arrecadação(número inserido)."
+}
+```
+
+**Código de Barras com segmento diferente de 4 (telecomunicações)**
+```html
+{
+    "sucesso": false,
+    "mensagem": "Código de barras inválido.",
+    "detalheErro": "Segmento do Código de Barras é Inválido(número inserido)."
+}
+```
+
+**Código de Barras com DV inválido**
+```html
+{
+    "sucesso": false,
+    "mensagem": "Código de barras inválido.",
+    "detalheErro": "Código de barras com erro no cálculo do Modulo10."
+}
+```
+
+**Cliente/Parceiro não habilitado para transferir arrecadações**
+```html
+{
+    "sucesso": false,
+    "mensagem": "Recebimento não autorizado.",
+    "detalheErro": "Ponto não autorizado a receber arrecadações."
+}
+```
+
+**Arrecadação enviada sem valor e configurado para não aceitar documento sem valor**
+```html
+{
+    "sucesso": false,
+    "mensagem": "Valor recebido Inválido.",
+    "detalheErro": "Não é permitido receber arrecadação com valor zerado ou nulo."
+}
+```
+
+**Arrecadação em duplicidade e configurado para não aceitar documento de mesmo código de barras**
+```html
+{
+    "sucesso": false,
+    "mensagem": "Arrecadação Duplicada.",
+    "detalheErro": "Foi encontrada uma arrecadação com esse código de barras (número do código de barras) com o pagamento registrado com sucesso."
+}
+```
+
+**Valor no Código de Barras diferente do valor informado e configurado para não aceitar documento com valor divergente entre o informado e o do Código de Barras**
+```html
+{
+    "sucesso": false,
+    "mensagem": "Valor da arrecadação (valor no código de barras) é diferente do valor declarado (valor informado na requisição)",
+    "detalheErro": "O valor do código de barras da arrecadação é diferente do valor declarado como recebido"
+}
+```
+
 
 # Consulta de Fatura
 Para verificar se existem contas na Claro ou na Net de seus clientes, utilize:
@@ -132,8 +301,8 @@ Para verificar se existem contas na Claro ou na Net de seus clientes, utilize:
 - POST /api/Multipagos/ConsultaFatura
 ```html
 {
-  "PosId": 1,
-  "TerminalId": "8FDC63EE-EC4E-416B-80F6-2F51EE5DC777",
+  "PosId": 6000,
+  "TerminalId": "48B20B9C-69B9-443E-9090-A5CE730DFA76",
   "NumSequencial": 10,
   "EmpresaId": 4,
   "IdentificacaoCliente": "12345678912",
@@ -157,7 +326,7 @@ Para verificar se existem contas na Claro ou na Net de seus clientes, utilize:
 Retorno em caso de sucesso:
 ```html
 {
-    "PosId": 1,
+    "PosId": 6000,
     "NumSequencial": 10,
     "BloquearPDV": false,
     "AtualizacaoDisponivel": false,
@@ -184,7 +353,7 @@ Retorno em caso de sucesso:
 Retorno em caso de não encontrar fatura em aberto:
 ```html
 {
-    "PosId": 1,
+    "PosId": 6000,
     "NumSequencial": 10,
     "BloquearPDV": false,
     "AtualizacaoDisponivel": false,
@@ -193,6 +362,43 @@ Retorno em caso de não encontrar fatura em aberto:
         "IdentificacaoCliente": "telephoneNumber::12345678912",
         "SucessoConsulta": true,
         "DescricaoAuxiliar": "Nenhuma fatura em aberto foi encontrada",
+        "Pendencias": null,
+        "Contratos": null
+    }
+}
+```
+
+Retorno em caso de IdentificacaoCliente não encontrada:
+```html
+{
+    "PosId": 6000,
+    "NumSequencial": 10,
+    "BloquearPDV": false,
+    "AtualizacaoDisponivel": false,
+    "DadosConsulta": {
+        "Empresa": 2,
+        "IdentificacaoCliente": "02130063160",
+        "SucessoConsulta": true,
+        "DescricaoAuxiliar": "Cliente não foi encontrado",
+        "Pendencias": null,
+        "Contratos": null
+    }
+}
+```
+
+
+Retorno em caso de erro na Claro:
+```html
+{
+    "PosId": 6000,
+    "NumSequencial": 10,
+    "BloquearPDV": false,
+    "AtualizacaoDisponivel": false,
+    "DadosConsulta": {
+        "Empresa": 8,
+        "IdentificacaoCliente": "02130063160",
+        "SucessoConsulta": false,
+        "DescricaoAuxiliar": "Não foi possivel realizar a chamada ao servidor Net/Claro Invoices\nDetalhes: The remote server returned an error: (400) Bad Request.",
         "Pendencias": null,
         "Contratos": null
     }
