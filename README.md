@@ -377,7 +377,6 @@ Retorno em caso de IdentificacaoCliente não encontrada:
 }
 ```
 
-
 Retorno em caso de erro na Claro:
 ```html
 {
@@ -394,4 +393,9 @@ Retorno em caso de erro na Claro:
         "Contratos": null
     }
 }
+```
+
+Retorno em caso de não identificar o PosId e TerminalId inseridos:
+```html
+null
 ```
