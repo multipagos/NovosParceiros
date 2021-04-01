@@ -137,7 +137,7 @@ De acordo com as informações recebidas, durante as nossas validações, podemo
 }
 ```
 
-**Forma de arrecadação/ captura diferente das informações permitidas**
+**Forma de arrecadação/captura diferente das informações permitidas**
 ```html
 {
     "sucesso": false,
@@ -224,6 +224,15 @@ De acordo com as informações recebidas, durante as nossas validações, podemo
     "sucesso": false,
     "mensagem": "Recebimento não autorizado.",
     "detalheErro": "Ponto não autorizado a receber arrecadações."
+}
+```
+
+**Arrecadação vencida e configurado para não aceitar arrecadação vencida**
+```html
+{
+    "sucesso": false,
+    "mensagem": "Data de Vencimento Inválida.",
+    "detalheErro": "A data de vencimento deve ser maior ou igual que a data corrente no formato aaaaMMdd."
 }
 ```
 
