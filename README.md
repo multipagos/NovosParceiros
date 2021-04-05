@@ -60,14 +60,9 @@ Após a realização de uma venda em sua plataforma, envie as seguintes informa�
 *Não esqueça de enviar o token obtido na autenticação como 'Bearer Token'
 ```
 **Orientação dos campos:**
-- CodigoConvenio: Definido pelo banco - Alfanumérico(20)
-- CodigoBanco: Código do Banco na câmara de compensação - Inteiro(3)
-- DomicilioBancario: Identificação da empresa/órgão no banco/agência/conta/dígito creditada - Alfanumérico(20)
 - DataPagamento: Data da efetivação do pagamento em sua plataforma - formato yyyy-MM-dd
-- DataCredito: Data da entrada do crédito - formato yyyy-MM-dd
 - CodigoBarras: Código de Barras da fatura - Alfanumérico(44)
 - ValorRecebido: Valor efetivamente recebido - Decimal(10) + V(99)
-- VrTarifa: Valor da tarifa acordada contratualmente - Decimal(10) + V(99)
 - CodigoAgenciaArrecadadora: Código da agência arrecadadora - Alfanumérico(8) 
 - FormaArrecadacaoCaptura: Forma de arrecadação - Alfanumérico(1) podendo ser:
   - 1 – Guichê de Caixa com fatura/guia de arrecadação
