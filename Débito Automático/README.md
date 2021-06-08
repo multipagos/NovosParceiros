@@ -18,7 +18,7 @@ Qualquer dúvida que possa ter, fique à vontade de enviar um e-mail para valnir
 | J | Confirmação de Processamento de Arquivos  | Opcional |
 | Z | Trailler | Obrigatório   |
 
-#CARACTERÍSTICAS DO ARQUIVO
+# CARACTERÍSTICAS DO ARQUIVO
 O arquivo com as informações da sistemática de débito automático, deverá obedecer ao **Padrão FEBRABAN de Débito Automático**, conforme Circular Oficial. Este manual utiliza a **Versão 04**, deste padrão.
 O arquivo deverá obedecer às seguintes características :
 - Meio: Internet,
