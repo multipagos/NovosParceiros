@@ -1,13 +1,11 @@
 # NovosParceiros
 
-Seja bem vindo ao guia de integrações Multipagos para Débito Automático Claro.
+Seja bem vindo ao guia de integrações Multipagos para Débito Automático.
 
 A documentação abaixo se refere a um recorte da documentação oficial do **FEBRABAN versão 4** referente aos tipos de registros que são utilizados para transição de informações com o Grupo Claro.
 
 No processo de transição de informações por arquivo, a Empresa/Banco enviará arquivo(s) à MulticomNet denominados '**Retorno**'. Esses arquivos serão processados e serão enviados ao grupo Claro.
-O grupo Claro, quando pertinente, enviará arquivo(s) à MulticomNet com informações que  serão encaminhadas também por arquivo denominados **Remessa** para a Empresa/Banco.
-
-É importante destacar que as informações de Remessa oriundas da Claro serão enviadas por ela quando pertinente. Exemplo: A Empresa/Banco envia um arquivo de Retorno com registro tipo B cadastrando o débito automático de um cliente no dia 01 indicando vencimento a cada dia 05 do mês. Muito provável que o grupo Claro envie registro E para este cliente em arquivo Remessa por volta do dia 25 uma vez que no cadastro já estava muito próximo à data de vencimento.
+Quando pertinente, a empresa enviará arquivo(s) à MulticomNet com informações que  serão encaminhadas também por arquivo denominados **Remessa** para a Empresa/Banco.
 
 Qualquer dúvida que possa ter, fique à vontade de enviar um e-mail para valniria.bandeira@multicomnet.com.br que iremos te ajudar.
 
@@ -172,6 +170,9 @@ Reenviar arquivo em até 24 horas.
 
 # LAYOUT DOS REGISTROS
 
+Segue abaixo o descritivo dos tipos de registros que estão acordados serem transmitidos como **Remessa**.
+O Banco precisa se preparar para receber essa informação por arquivo.
+
 - Registro “A” - Header
 
 
@@ -203,6 +204,7 @@ Reenviar arquivo em até 24 horas.
 | C07-Reservado para o futuro | 125 - 149 | X(097) | Brancos |
 | C08-Código do Movimento  | 150 - 150  | 9(001) | O conteúdo deverá ser idêntico ao anteriormente enviado pelo Banco, no registro tipo “B” |
 
+**C05-Ocorrência 1**
 ````
 Identificação do cliente não localizada / inexistente
 Restrição de cadastramento pela empresa
@@ -224,6 +226,7 @@ Cliente desativado no cadastro da empresa
 | D07-Reservado para o futuro | 125 - 149 | X(097) | Brancos |
 | D08-Código do Movimento  | 150 - 150  | 9(001) | 0 = Alteração da Identificação do Cliente na Empresa; 1 = Exclusão de optante do Débito Automático, solicitado pela Empresa, conforme clausulas contratuais do convênio |
 
+**D06-Ocorrência**
 ````
 Exclusão por alteração cadastral do cliente,
 Exclusão - transferido para débito em outro banco,
