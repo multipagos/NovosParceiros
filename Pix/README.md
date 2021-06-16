@@ -12,13 +12,19 @@ Qualquer dúvida que possa ter, fique à vontade de enviar um e-mail para valnir
 Disponibilizamos um ambiente SandBox para que você possa realizar os testes. Fique à vontade para usar!
 - Url SandBox: https://sandbox.multipagos.com.br
 
+Para utilização do sandbox, você vai precisar de um acesso. Utilize os abaixo:
+- PosId: 6000
+- TerminalId: 48B20B9C-69B9-443E-9090-A5CE730DFA76
+
 
 # Gerar QrCode PIX
-Após a realização de uma venda em sua plataforma, envie as seguintes informações para que possamos processar e encaminhar ao Grupo Claro:
+Para gerar o QrCode contendo as informações corretas de recebimento da fatura, preencha os campos abaixo na requisição:
 
 - POST /api/Multipagos/Pix
 ```html
   {
+	"PosId": 6000,
+	"TerminalId": "48B20B9C-69B9-443E-9090-A5CE730DFA76",
     "Chave": "848500000005439901582027106201197257824014221231",
     "IdCliente": "54292125000161",  
     "Valor" : 1252.32,
@@ -26,6 +32,8 @@ Após a realização de uma venda em sua plataforma, envie as seguintes informa�
 }
 ```
 **Orientação dos campos:**
+- PosId: Identificação do parceiro
+- TerminalId: Chave de acesso do PosId
 - Chave: Código de Barras da fatura - Alfanumérico(44) ou Alfanumérico(48)
 - IdCliente: Identificação do cliente, podendo ser o CPF/CNPJ ou o número de telefone - Numérico(14) máximo 
 - Valor: Valor efetivamente recebido - Decimal(10) + V(99)
@@ -48,6 +56,14 @@ De acordo com as informações recebidas, durante as nossas validações, podemo
 
 Será retornada a mensagem de sucesso juntamente com o campo **qrCodeBase64_Result** que corresponde ao QrCode em formato **Base64**.
 
+**PosId ou TerminalId inválidos**
+```html
+{
+    "PosId ou TerminalId": [
+        "Os campos PosId ou TerminalId estão inválidos. Favor verificar."
+    ]
+}
+```
 
 **Chave Não Informada**
 ```html
