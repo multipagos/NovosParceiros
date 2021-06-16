@@ -22,9 +22,9 @@ Para gerar o QrCode contendo as informações corretas de recebimento da fatura,
 
 - POST /api/Multipagos/Pix
 ```html
-  {
-	"PosId": 6000,
-	"TerminalId": "48B20B9C-69B9-443E-9090-A5CE730DFA76",
+{
+    "PosId": 6000,
+    "TerminalId": "48B20B9C-69B9-443E-9090-A5CE730DFA76",
     "Chave": "848500000005439901582027106201197257824014221231",
     "IdCliente": "54292125000161",  
     "Valor" : 1252.32,
