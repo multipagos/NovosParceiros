@@ -111,17 +111,7 @@ De acordo com as informações recebidas, durante as nossas validações, podemo
 ```html
 {
     "sucesso": false,
-    "mensagem": "Usuário não autenticado",
-    "detalheErro": "O token da requisição deve ser válido"
-}
-```
-
-**Código Agência Arrecadora Inválido**
-```html
-{
-    "sucesso": false,
-    "mensagem": "Código Agência Arrecadora inválido.",
-    "detalheErro": "Código Agência Arrecadora não poder ser zero / branco."
+    "mensagem": "401 Unauthorized - Token não autorizado, A aplicação encaminhou uma credencial invalida ou inexistente."
 }
 ```
 
@@ -129,17 +119,26 @@ De acordo com as informações recebidas, durante as nossas validações, podemo
 ```html
 {
     "sucesso": false,
-    "mensagem": "Código Agência Arrecadora inválido.",
-    "detalheErro": "Código Agência Arrecadora não poder ser zero / branco."
+    "mensagem": "Código Agência Arrecadadora inválido.",
+    "detalheErro": "Código Agência Arrecadadora não pode ser zero / branco."
+}
+
+```
+**Forma de arrecadação/captura igual a zero ou vazio**
+```html
+
+{
+    "sucesso": false,
+    "mensagem": "Forma Arrecadação Captura inválido.",
+    "detalheErro": "Forma Arrecadação Captura não pode ser zero / branco."
 }
 ```
-
 **Forma de arrecadação/captura diferente das informações permitidas**
 ```html
 {
     "sucesso": false,
-    "mensagem": "Forma Arrecadação Captura inválido.",
-    "detalheErro": "Forma Arrecadação Captura não poder ser zero / branco."
+    "mensagem": "Forma Arrecadacao Captura inválida.",
+    "detalheErro": "Forma de arrecadação / captura (Código inserido) Inválida."
 }
 ```
 
@@ -157,7 +156,7 @@ De acordo com as informações recebidas, durante as nossas validações, podemo
 {
     "sucesso": false,
     "mensagem": "Forma Pagamento inválido.",
-    "detalheErro": "Forma Pagamento não poder ser zero / branco."
+    "detalheErro": "Forma Pagamento não pode ser zero / branco."
 }
 ```
 
@@ -166,7 +165,7 @@ De acordo com as informações recebidas, durante as nossas validações, podemo
 {
     "sucesso": false,
     "mensagem": "Código de Barras inválido.",
-    "detalheErro": "Código de Barras não poder ser zero / branco."
+    "detalheErro": "Código de Barras não pode ser zero / branco."
 }
 ```
 
@@ -203,6 +202,15 @@ De acordo com as informações recebidas, durante as nossas validações, podemo
     "sucesso": false,
     "mensagem": "Código de barras inválido.",
     "detalheErro": "Segmento do Código de Barras é Inválido(número inserido)."
+}
+```
+
+**Código de Barras com identificador de tipo do valor inválido**
+```html
+{
+    "sucesso": false,
+    "mensagem": "Código de barras inválido.",
+    "detalheErro": "Código de barras com identificador de tipo do valor inválido(número inserido)."
 }
 ```
 
