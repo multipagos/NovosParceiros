@@ -328,7 +328,7 @@ Retorno em caso de sucesso:
     "AtualizacaoDisponivel": false,
     "DadosConsulta": {
         "Empresa": 8,
-        "IdentificacaoCliente": "telephoneNumber::21987654321",
+        "IdentificacaoCliente": "telephoneNumber::12345678912",
         "SucessoConsulta": true,
         "DescricaoAuxiliar": "OK",
         "Pendencias": [
@@ -373,7 +373,7 @@ Retorno em caso de IdentificacaoCliente não encontrada:
     "AtualizacaoDisponivel": false,
     "DadosConsulta": {
         "Empresa": 2,
-        "IdentificacaoCliente": "02130063160",
+        "IdentificacaoCliente": "12345678912",
         "SucessoConsulta": true,
         "DescricaoAuxiliar": "Cliente não foi encontrado",
         "Pendencias": null,
@@ -391,7 +391,7 @@ Retorno em caso de erro na Claro:
     "AtualizacaoDisponivel": false,
     "DadosConsulta": {
         "Empresa": 8,
-        "IdentificacaoCliente": "02130063160",
+        "IdentificacaoCliente": "12345678912",
         "SucessoConsulta": false,
         "DescricaoAuxiliar": "Não foi possivel realizar a chamada ao servidor Net/Claro Invoices\nDetalhes: The remote server returned an error: (400) Bad Request.",
         "Pendencias": null,
