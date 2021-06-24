@@ -304,6 +304,7 @@ Para verificar se existem contas na Claro ou na Net de seus clientes, utilize:
   "IdentificacaoCliente": "12345678912",
   "Contrato": "123"
 }
+*Atenção - IdentificadorCliente inválido propositalmente.
 ```
 **Orientação dos campos:**
 - PosId - Campo PDV enviado
