@@ -255,7 +255,7 @@ De acordo com as informações recebidas, durante as nossas validações, podemo
 {
     "sucesso": false,
     "mensagem": "Arrecadação Duplicada.",
-    "detalheErro": "Foi encontrada uma arrecadação com esse código de barras (número do código de barras) com o pagamento registrado com sucesso."
+    "detalheErro": "Foi encontrada uma arrecadação com esse código de barras (número do código de barras) e número autenticação (número autenticação) com o pagamento registrado com sucesso."
 }
 ```
 
