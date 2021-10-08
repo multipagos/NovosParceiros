@@ -4,7 +4,7 @@ Seja bem vindo ao guia de orientação à integrações de pagamentos PIX com Mu
 
 Através da documentação abaixo você será capaz de utilizar os serviços Multipagos de geração de QrCode para pagamentos PIX.
 
-Qualquer dúvida que possa ter, fique à vontade de enviar um e-mail para valniria.bandeira@multicomnet.com.br que iremos te ajudar.
+Qualquer dúvida que possa ter, fique à vontade de enviar um e-mail para team-mpagos@multipagos.com.br que iremos te ajudar.
 
 
 

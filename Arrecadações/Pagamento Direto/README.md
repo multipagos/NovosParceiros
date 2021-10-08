@@ -1,17 +1,19 @@
-# NovosParceiros
+# Novos Parceiros
 
 Seja bem vindo ao guia de orientação à integrações de Arrecadações com Multipagos!
 
 Através da documentação abaixo você será capaz de utilizar os serviços Multipagos que foram construídos para facilitar a consulta e a transição de informações entre suas arrecações e o grupo Claro.
 
-Qualquer dúvida que possa ter, fique à vontade de enviar um e-mail para valniria.bandeira@multicomnet.com.br que iremos te ajudar.
+Qualquer dúvida que possa ter, fique à vontade de enviar um e-mail para team-mpagos@multipagos.com.br que iremos te ajudar.
 
-
+#Pagamento de Arrecadações Direto
+Disponibilizamos 1 API para a realização do processo de pagamento com sucesso.
+A API tem como objetivo realizar o registro de pagamento de uma forma mais ágil e direta.
+**Atenção: Essa API não pode ser utilizada em conjunto com o Pagamento de Arrecadações por Etapas**
 
 # SandBox
 Disponibilizamos um ambiente SandBox para que você possa realizar os testes. Fique à vontade para usar!
 - Url SandBox: https://sandbox.multipagos.com.br
-
 
 
 # Autenticação

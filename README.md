@@ -6,4 +6,4 @@ Através das documentações nesta plataforma, você será capaz de utilizar os 
 
 Acesse os diretórios acima para navegar entre os serviços que nós disponibilizamos para Novos Parceiros.
 
-Qualquer dúvida que possa ter, fique à vontade de enviar um e-mail para valniria.bandeira@multicomnet.com.br que iremos te ajudar.
+Qualquer dúvida que possa ter, fique à vontade de enviar um e-mail para team-mpagos@multipagos.com.br que iremos te ajudar.

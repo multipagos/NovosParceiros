@@ -7,7 +7,7 @@ A documentação abaixo se refere a um recorte da documentação oficial do **FE
 No processo de transição de informações por arquivo, a Empresa/Banco enviará arquivo(s) à MulticomNet denominados '**Retorno**'. Esses arquivos serão processados e serão enviados ao grupo Claro.
 Quando pertinente, a empresa enviará arquivo(s) à MulticomNet com informações que  serão encaminhadas também por arquivo denominados **Remessa** para a Empresa/Banco.
 
-Qualquer dúvida que possa ter, fique à vontade de enviar um e-mail para valniria.bandeira@multicomnet.com.br que iremos te ajudar.
+Qualquer dúvida que possa ter, fique à vontade de enviar um e-mail para team-mpagos@multipagos.com.br que iremos te ajudar.
 
 
 # Registros aceitos em arquivo **Retorno**
