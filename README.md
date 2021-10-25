@@ -1,4 +1,4 @@
-# NovosParceiros
+# Novos Parceiros
 
 Estamos muito felizes por você está aqui!
 

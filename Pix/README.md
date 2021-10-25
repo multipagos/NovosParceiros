@@ -1,4 +1,4 @@
-# NovosParceiros
+# Novos Parceiros
 
 Seja bem vindo ao guia de orientação à integrações de pagamentos PIX com Multipagos!
 
