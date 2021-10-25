@@ -1,4 +1,4 @@
-# NovosParceiros
+# Novos Parceiros
 
 Seja bem vindo ao guia de orientação à integrações de Arrecadações com Multipagos!
 
@@ -6,7 +6,7 @@ Através da documentação abaixo você será capaz de utilizar os serviços Mul
 
 Qualquer dúvida que possa ter, fique à vontade de enviar um e-mail para team-mpagos@multipagos.com.br que iremos te ajudar.
 
-
+**Atenção: Essa API está obsoleta e será removida no dia 20/12/2021**
 
 # SandBox
 Disponibilizamos um ambiente SandBox para que você possa realizar os testes. Fique à vontade para usar!
