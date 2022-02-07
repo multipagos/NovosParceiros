@@ -18,7 +18,7 @@ Qualquer dúvida que possa ter, fique à vontade de enviar um e-mail para team-m
 | A | Header | Obrigatório |
 | B | Cadastramento de Débito Automático | Obrigatório  |
 | F | Retorno do Débito Automático | Obrigatório  |
-| H | Retorno do Débito Automático | Obrigatório  |
+| H | Ocorrência da Alteração da Identificação do Cliente na Empresa | Obrigatório  |
 | J | Confirmação de Processamento de Arquivos  | Opcional |
 | Z | Trailler | Obrigatório   |
 
@@ -132,7 +132,7 @@ Reenviar arquivo em até 24 horas.
 | H05-Identificação do Cliente na Empresa - Atual| 045 - 069  | X(025) | O conteúdo deverá ser idêntico ao anteriormente enviado pela Empresa, no registro tipo “H” |
 | H06-Ocorrência | 070 - 127 | X(058) | Mensagem explicativa do não processamento |
 | H07-Reservado para o futuro  | 128 - 149 | X(022) | Brancos |
-| H08-Código do Movimento  | 150 - 150 | 9(001) | O conteúdo deverá ser idêntico ao anteriormente enviado pela Empresa, no registro tipo “H” |
+| H08-Código do Movimento  | 150 - 150 | 9(001) | O conteúdo deverá ser idêntico ao anteriormente enviado pela Empresa, no registro tipo “D” |
 
 - Registro “J” - Confirmação de Processamento de Arquivos 
 

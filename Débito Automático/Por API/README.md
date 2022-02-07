@@ -85,6 +85,54 @@ Seguem detalhes sobre os campos que precisam ser enviados.
 }
 ```
 
+**Orientação dos campos:**
+- TotalDeRegistros - Campo de validação. Vamos validar se o total de registros que enviou confere com o total de elementos em Detalhes.
+- ValorTotalRegistros - Campo de validação. Vamos validar se o valor total de valores informado confere com o total das informações financeiras que recebemos.
+- CodigoConvenio - Identificação do convênio ao qual os registros se referem. Vamos encaminhar a lista de convênios aceitos.
+- Nsa - "Número sequencial de API" é um campo de validação. Serve para garantirmos que nenhuma request se perdeu ao longo do caminho.
+- Detalhes - Lista de registros.
+	- CodigoRegistro - Identificação do tipo de informação que será trafegada. Se for Retorno então pode ser B, F ou H.
+	- IdentificacaoClienteEmpresa - Esta identificação deverá : Conter um processo de validação (DV), Ser única para cada cliente da empresa, Ser a mesma em todos os débitos consecutivos de um mesmo cliente. Esta informação será validada pelo Banco, conforme regra definida pela empresa, no momento do cadastramento.
+	- AgenciaDebito - Identificação da Agência no Banco onde será efetuado o Débito Automático
+	- IdentificacaoClienteBanco - Identificação utilizada pelo Banco para efetuar o débito 
+	
+Os demais campos podem variar de acor dom o CodigoRegistro. Podendo ser:
+- CodigoRegistro: B - Cadastramento de Débito Automático
+	- DataOperacao - Data e hora da operação/ocorrência
+	- CodigoMovimento - Podendo ser:
+		- 1 = Exclusão de optante pelo débito automático
+		- 2 = Inclusão de optante pelo débito automático
+- CodigoRegistro: F - Retorno do Débito Automático
+	- UsoEmpresa - O conteúdo deverá ser idêntico ao anteriormente enviado pela Empresa, no registro tipo “E”
+	- DataDebito - Conterá : Data do Vencimento, se o Código de Retorno, for diferente de “00” (não debitado); Data real do Débito, se o Código de retorno for igual a “00” (debitado). Formato AAAAMMDD.
+	- ValorDebito - Conterá : Valor Original enviado, se o Código de Retorno, for diferente de “00” (não debitado); Valor efetivamente Debitado, se o Código de Retorno for igual a “00” (debitado)
+	- CodigoMovimento - O conteúdo será ser idêntico ao anteriormente enviado pela Empresa, no registro tipo “E”
+	- StatusRetorno:
+````
+“00” = Débito efetuado
+“01” = Débito não efetuado - Insuficiência de fundos
+“02” = Débito não efetuado - Conta corrente não cadastrada
+“04” = Débito não efetuado - Outras restrições
+“05” = Débito não efetuado – valor do débito excede valor limite aprovado.
+“10” = Débito não efetuado - Agência em regime de encerramento
+“12” = Débito não efetuado - Valor inválido
+“13” = Débito não efetuado - Data de lançamento inválida
+“14” = Débito não efetuado - Agência inválida
+“15” = Débito não efetuado - conta corrente inválida
+“18” = Débito não efetuado - Data do débito anterior à do processamento
+“30” = Débito não efetuado - Sem contrato de débito automático
+“31” = Débito efetuado em data diferente da data informada – feriado na praça de débito
+“96” = Manutenção do Cadastro
+“97” = Cancelamento - Não encontrado
+“98” = Cancelamento - Não efetuado, fora do tempo hábil
+“99” = Cancelamento - cancelado conforme solicitação
+````
+
+- CodigoRegistro: H
+	- IdentificacaoClienteNovo - O conteúdo deverá ser idêntico ao anteriormente enviado pela Empresa, no registro tipo “D”
+	- Ocorrencia - Mensagem explicativa do não processamento
+	- CodigoMovimento - O conteúdo deverá ser idêntico ao anteriormente enviado pela Empresa, no registro tipo “D”
+
 **Resultado com sucesso:**
 ```
 {
@@ -136,12 +184,19 @@ Após autenticado com sucesso, realize a request abaixo.
 ```
 {
   "nome": "Banco X",
-  "chave": "bancox",
   "funcionalidadeId": 4,
-  "url": "SuaUrlAqui/resource",
-  "idExterno": "6000"
+  "url": "SuaUrlAqui/resource", 
+  "idExterno": "bancox1234" 
 }
 ```
+
+**Orientação dos campos:**
+- nome - Identificação do assinante. Nome da instituição parceira
+- funcionalidadeId - Identificação da funcionalidade assinada. Iremos passar a lista de funcionalidades disponíveis.
+- url - Url que receberá as mensagem enviadas pelo WebHook. Sugerimo o uso de https://webhook.site/ para homologação.
+- idExterno - Identificação externa 
+
+
 **Resultado com sucesso:**
 ```
 {
