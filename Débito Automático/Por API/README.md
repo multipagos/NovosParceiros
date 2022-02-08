@@ -58,7 +58,7 @@ Seguem detalhes sobre os campos que precisam ser enviados.
 			"IdentificacaoClienteEmpresa": "00000001008",
 			"AgenciaDebito": "001",
 			"IdentificacaoClienteBanco": "00000001123",
-			"DataOperacao": "2022-02-04 12:01:02",
+			"DataOperacao": "2022-02-04T12:01:02",
 			"CodigoMovimento": "1"
 		},
 		{
@@ -153,7 +153,7 @@ Os demais campos podem variar de acor dom o CodigoRegistro. Podendo ser:
 ```
 {
     "sucesso": false,
-    "mensagem": "Convênio não encontrado",
+    "mensagem": "Convênio não encontrado.",
     "validadeToken": "Token expira em : 50 minutos e 53 segundos."
 }
 ```
@@ -161,7 +161,7 @@ Os demais campos podem variar de acor dom o CodigoRegistro. Podendo ser:
 ```
 {
     "sucesso": false,
-    "mensagem": "Campo CodigoRegistro (X) inválido",
+    "mensagem": "Campo CodigoRegistro (X) inválido.",
     "validadeToken": "Token expira em : 50 minutos e 53 segundos."
 }
 ```
@@ -169,7 +169,7 @@ Os demais campos podem variar de acor dom o CodigoRegistro. Podendo ser:
 ```
 {
     "sucesso": false,
-    "mensagem": "Código de NSA fora de sequência. Último registro: 2",
+    "mensagem": "Código de NSA fora de sequência. O último recebido foi 2.",
     "validadeToken": "Token expira em : 50 minutos e 53 segundos."
 }
 ```
@@ -201,7 +201,7 @@ Após autenticado com sucesso, realize a request abaixo.
 ```
 {
   "sucesso": true,
-  "mensagem": "Assinatura cadastrada.",
+  "mensagem": "Assinatura realizada com sucesso.",
   "validadeToken": "Token expira em : 55 minutos e 36 segundos."
 }
 ```
@@ -220,7 +220,7 @@ Após autenticado com sucesso, realize a request abaixo.
 			"IdentificacaoClienteEmpresa": "00000001008",
 			"AgenciaDebito": "001",
 			"IdentificacaoClienteBanco": "00000001123",
-			"DataOperacao": "2022-02-04 12:01:02",
+			"DataOperacao": "2022-02-04T12:01:02",
 			"CodigoMovimento": "1"
 		},
 		{
@@ -228,7 +228,7 @@ Após autenticado com sucesso, realize a request abaixo.
 			"IdentificacaoClienteEmpresa": "00000001001",
 			"AgenciaDebito": "001",
 			"IdentificacaoClienteBanco": "00000001456",
-			"DataOperacao": "2022-02-04 12:01:04",
+			"DataOperacao": "2022-02-04T12:01:04",
 			"CodigoMovimento": "1"
 		},
 		{
@@ -236,7 +236,7 @@ Após autenticado com sucesso, realize a request abaixo.
 			"IdentificacaoClienteEmpresa": "00000001002",
 			"AgenciaDebito": "001",
 			"IdentificacaoClienteBanco": "00000001789",
-			"DataOperacao": "2022-02-04 12:01:06",
+			"DataOperacao": "2022-02-04T12:01:06",
 			"CodigoMovimento": "1"
 		},
 		{
@@ -244,7 +244,7 @@ Após autenticado com sucesso, realize a request abaixo.
 			"IdentificacaoClienteEmpresa": "00000001003",
 			"AgenciaDebito": "001",
 			"IdentificacaoClienteBanco": "00000001135",
-			"DataOperacao": "2022-02-04 12:01:08",
+			"DataOperacao": "2022-02-04T12:01:08",
 			"CodigoMovimento": "1"
 		},
 		{
@@ -252,7 +252,7 @@ Após autenticado com sucesso, realize a request abaixo.
 			"IdentificacaoClienteEmpresa": "00000001004",
 			"AgenciaDebito": "001",
 			"IdentificacaoClienteBanco": "00000001246",
-			"DataOperacao": "2022-02-04 12:02:00",
+			"DataOperacao": "2022-02-04T12:02:00",
 			"CodigoMovimento": "1"
 		},
 		{
@@ -260,7 +260,7 @@ Após autenticado com sucesso, realize a request abaixo.
 			"IdentificacaoClienteEmpresa": "00000001005",
 			"AgenciaDebito": "001",
 			"IdentificacaoClienteBanco": "00000001357",
-			"DataOperacao": "2022-02-04 12:02:02",
+			"DataOperacao": "2022-02-04T12:02:02",
 			"CodigoMovimento": "1"
 		},
 		{
@@ -268,7 +268,7 @@ Após autenticado com sucesso, realize a request abaixo.
 			"IdentificacaoClienteEmpresa": "00000001006",
 			"AgenciaDebito": "001",
 			"IdentificacaoClienteBanco": "00000001468",
-			"DataOperacao": "2022-02-04 12:02:04",
+			"DataOperacao": "2022-02-04T12:02:04",
 			"CodigoMovimento": "1"
 		},
 		{
@@ -276,7 +276,7 @@ Após autenticado com sucesso, realize a request abaixo.
 			"IdentificacaoClienteEmpresa": "00000001007",
 			"AgenciaDebito": "001",
 			"IdentificacaoClienteBanco": "00000001579",
-			"DataOperacao": "2022-02-04 12:02:06",
+			"DataOperacao": "2022-02-04T12:02:06",
 			"CodigoMovimento": "1"
 		}
 	]
@@ -287,7 +287,7 @@ Após autenticado com sucesso, realize a request abaixo.
 ```
 {
     "sucesso": true,
-    "mensagem": "Dados recebidos com sucesso. Vamos enviar à Claro e assim que houver retorno nós enviaremos.",
+    "mensagem": "Dados recebidos com sucesso. Vamos enviar à Claro e assim que tivermos respostas, nós enviaremos.",
     "validadeToken": "Token expira em : 50 minutos e 53 segundos."
 }
 ```
