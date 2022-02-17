@@ -114,7 +114,7 @@ Seguem detalhes sobre os campos que precisam ser enviados.
     "sucesso": false,
     "mensagem": "Não foi possível efetuar esta ação. Tente mais tarde.",
     "totalDeRegistros": 0,
-    "mensagemErro": "A campo (X) é inválido."
+    "mensagemErro": "O campo (X) é inválido."
 }
 ```
 **Campo obrigatório não preenchido**
@@ -123,5 +123,5 @@ Seguem detalhes sobre os campos que precisam ser enviados.
     "sucesso": false,
     "mensagem": "Não foi possível efetuar esta ação. Tente mais tarde.",
     "totalDeRegistros": 0,
-    "mensagemErro": "A campo (X) é obrigatório e não foi preenchido."
+    "mensagemErro": "O campo (X) é obrigatório e não foi preenchido."
 }
