@@ -7,7 +7,7 @@ Através da documentação abaixo você será capaz de utilizar os serviços Mul
 Qualquer dúvida que possa ter, fique à vontade de enviar um e-mail para team-mpagos@multipagos.com.br que iremos te ajudar.
 
 
-# SandBox - Disponível a partir de 28/02/2022
+# SandBox
 Disponibilizamos um ambiente SandBox para que você possa realizar os testes. Fique à vontade para usar!
 - Url SandBox: https://sandbox.multipagos.com.br
 
