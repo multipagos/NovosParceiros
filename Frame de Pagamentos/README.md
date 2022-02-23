@@ -22,6 +22,7 @@ Processo de obtenção de token que irá garantir a autorização na utilizaçã
 }
 ```
 **Pdv e Terminal serão fornecidos.**
+StatusCode: 200
 
 Retorno em caso de sucesso:
 ```html
@@ -39,6 +40,7 @@ Retorno em caso de falha:
     "message": "Pdv ou Terminal inválidos."
 }
 ```
+StatusCode: 400
 
 # **Envio de Informações de Débito Automático**
 Seguem detalhes sobre os campos que precisam ser enviados.
@@ -108,6 +110,7 @@ Seguem detalhes sobre os campos que precisam ser enviados.
     "mensagemErro": ""
 }
 ```
+StatusCode: 200
 **Campo Inválido**
 ```
 {
@@ -125,3 +128,4 @@ Seguem detalhes sobre os campos que precisam ser enviados.
     "totalDeRegistros": 0,
     "mensagemErro": "O campo (X) é obrigatório e não foi preenchido."
 }
+StatusCode: 400

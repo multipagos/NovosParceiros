@@ -43,13 +43,13 @@ Retorno em caso de falha:
 # **Envio de Informações de Débito Automático**
 Seguem detalhes sobre os campos que precisam ser enviados.
 
-- POST /api/DebitoAutomatico/Retorno
+- POST /api/v1/DebitoAutomatico/Retorno
 
 ```html
 {
 	"TotalDeRegistros": 3,
 	"ValorTotalRegistros": 125.99,
-	"CodigoConvenio": "EMPRESA_A",
+	"CodigoConvenio": "CLAROMOVEL",
 	"Nsa": 1,
 	"Detalhes":
 	[
@@ -211,7 +211,7 @@ Após autenticado com sucesso, realize a request abaixo.
 {
 	"TotalDeRegistros": 8,
 	"ValorTotalRegistros": 0,
-	"CodigoConvenio": "EMPRESA_A",
+	"CodigoConvenio": "CLAROMOVEL",
 	"Nsa": 1,
 	"Detalhes":
 	[
@@ -297,7 +297,7 @@ Após autenticado com sucesso, realize a request abaixo.
 {
 	"TotalDeRegistros": 7,
 	"ValorTotalRegistros": 0,
-	"CodigoConvenio": "EMPRESSA_A",
+	"CodigoConvenio": "CLAROMOVEL",
 	"Nsa": 1,
 	"Detalhes":
 	[
@@ -377,3 +377,4 @@ Após autenticado com sucesso, realize a request abaixo.
 	]
 }
 ```
+**Agendamos uma rotina para realizar a RemessaFake para o WebHook de 1 em 1 hora.**
