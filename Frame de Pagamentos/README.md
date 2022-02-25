@@ -22,7 +22,6 @@ Processo de obtenção de token que irá garantir a autorização na utilizaçã
 }
 ```
 **Pdv e Terminal serão fornecidos.**
-StatusCode: 200
 
 Retorno em caso de sucesso:
 ```html
@@ -30,6 +29,8 @@ Retorno em caso de sucesso:
     "sucesso": true,
     "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6IjEiLCJuYmYiOjE2MTU5MDg0MjQsImV4cCI6MTYxNTkwODQ4NCwiaWF0IjoxNjE1OTA4NDI0fQ.Iy7m-U1KPomjQTh2tN3X5gGXn6LvE3W4H3dBRnc5-7s"
 }
+
+StatusCode: 200
 ```
 **Token válido por 1 hora.**
 
@@ -39,13 +40,14 @@ Retorno em caso de falha:
     "sucesso": false,
     "message": "Pdv ou Terminal inválidos."
 }
-```
+
 StatusCode: 400
+```
 
 # **Envio de Informações de Débito Automático**
 Seguem detalhes sobre os campos que precisam ser enviados.
 
-- POST /api/Pagamento/PagParceladoFrame
+- POST /api/v1/Pagamento/PagParceladoFrame
 
 ```html
 {
@@ -107,18 +109,23 @@ Seguem detalhes sobre os campos que precisam ser enviados.
         "frameLink": "https://app-framespa-hml.azurewebsites.net/CardFormCustom?token=20220215BB4B51B73011467E9F41CCD76DB52D72"
     },
     "totalDeRegistros": 1,
-    "mensagemErro": ""
+    "mensagemErro": "",
+	"validadeToken": "Token expira em : 59 minutos e 1 segundos."
 }
-```
+
 StatusCode: 200
+```
 **Campo Inválido**
 ```
 {
     "sucesso": false,
     "mensagem": "Não foi possível efetuar esta ação. Tente mais tarde.",
     "totalDeRegistros": 0,
-    "mensagemErro": "O campo (X) é inválido."
+    "mensagemErro": "O campo (X) é inválido.",
+	"validadeToken": "Token expira em : 59 minutos e 1 segundos."
 }
+
+StatusCode: 400
 ```
 **Campo obrigatório não preenchido**
 ```
@@ -126,6 +133,9 @@ StatusCode: 200
     "sucesso": false,
     "mensagem": "Não foi possível efetuar esta ação. Tente mais tarde.",
     "totalDeRegistros": 0,
-    "mensagemErro": "O campo (X) é obrigatório e não foi preenchido."
+    "mensagemErro": "O campo (X) é obrigatório e não foi preenchido.",
+	"validadeToken": "Token expira em : 59 minutos e 1 segundos."
 }
+
 StatusCode: 400
+```

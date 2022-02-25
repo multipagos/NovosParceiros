@@ -193,7 +193,7 @@ Após autenticado com sucesso, realize a request abaixo.
 **Orientação dos campos:**
 - nome - Identificação do assinante. Nome da instituição parceira
 - funcionalidadeId - Identificação da funcionalidade assinada. Iremos passar a lista de funcionalidades disponíveis.
-- url - Url que receberá as mensagem enviadas pelo WebHook. Sugerimo o uso de https://webhook.site/ para homologação.
+- url - Url que receberá as mensagem enviadas pelo WebHook. Sugerimos o uso de https://webhook.site/ para homologação.
 - idExterno - Identificação externa 
 
 
