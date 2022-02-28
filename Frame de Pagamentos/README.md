@@ -77,6 +77,7 @@ Seguem detalhes sobre os campos que precisam ser enviados.
 }
 *Todos os campos são obrigatórios
 **Números e informações do exemplo são fictícias.
+***Não esqueça de enviar o token obtido na autenticação como 'Bearer Token'
 ```
 
 **Orientação dos campos:**
@@ -106,7 +107,8 @@ Seguem detalhes sobre os campos que precisam ser enviados.
     "sucesso": true,
     "mensagem": "Processo realizado com sucesso.",
     "data": {
-        "frameLink": "https://app-framespa-hml.azurewebsites.net/CardFormCustom?token=20220215BB4B51B73011467E9F41CCD76DB52D72"
+        "frameLink": "https://app-framespa-hml.azurewebsites.net/CardFormCustom?token=20220215BB4B51B73011467E9F41CCD76DB52D72",
+		"id": "LTYz0DA5MzQ3Mw=="
     },
     "totalDeRegistros": 1,
     "mensagemErro": "",
