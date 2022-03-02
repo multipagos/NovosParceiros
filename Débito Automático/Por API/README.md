@@ -206,7 +206,7 @@ Após autenticado com sucesso, realize a request abaixo.
 }
 ```
 
-- POST /api/DebitoAutomatico/Retorno
+- POST /api/v1/DebitoAutomatico/Retorno
 ```html
 {
 	"TotalDeRegistros": 8,
