@@ -44,7 +44,7 @@ Retorno em caso de falha:
 StatusCode: 400
 ```
 
-# **Envio de Informações de Débito Automático**
+# **Início do Fluxo: Obter link do frame + Identificador da Transação**
 Seguem detalhes sobre os campos que precisam ser enviados.
 
 - POST /api/v1/Pagamento/PagParceladoFrame
@@ -108,11 +108,11 @@ Seguem detalhes sobre os campos que precisam ser enviados.
     "mensagem": "Processo realizado com sucesso.",
     "data": {
         "frameLink": "https://app-framespa-hml.azurewebsites.net/CardFormCustom?token=20220215BB4B51B73011467E9F41CCD76DB52D72",
-		"id": "LTYz0DA5MzQ3Mw=="
+	"id": "LTYz0DA5MzQ3Mw=="
     },
     "totalDeRegistros": 1,
     "mensagemErro": "",
-	"validadeToken": "Token expira em : 59 minutos e 1 segundos."
+    "validadeToken": "Token expira em : 59 minutos e 1 segundos."
 }
 
 StatusCode: 200
@@ -124,7 +124,7 @@ StatusCode: 200
     "mensagem": "Não foi possível efetuar esta ação. Tente mais tarde.",
     "totalDeRegistros": 0,
     "mensagemErro": "O campo (X) é inválido.",
-	"validadeToken": "Token expira em : 59 minutos e 1 segundos."
+    "validadeToken": "Token expira em : 59 minutos e 1 segundos."
 }
 
 StatusCode: 400
@@ -136,8 +136,103 @@ StatusCode: 400
     "mensagem": "Não foi possível efetuar esta ação. Tente mais tarde.",
     "totalDeRegistros": 0,
     "mensagemErro": "O campo (X) é obrigatório e não foi preenchido.",
-	"validadeToken": "Token expira em : 59 minutos e 1 segundos."
+    "validadeToken": "Token expira em : 59 minutos e 1 segundos."
 }
 
 StatusCode: 400
+```
+
+# **Término do Fluxo: Recebimento de Informações de pagamento via WebHook Multicom**
+Primeiramente, é necessário assinar o WebHook para receber notificações de pagamentos realizados com sucesso no frame.
+Para isso, após autenticado com sucesso pela API de geração de Token, realize a request abaixo.
+- POST /api/v1/WebHook/AssinarWebHook
+```
+{
+  "nome": "Banco X",
+  "funcionalidadeId": 5,
+  "url": "SuaUrlAqui/resource", 
+  "idExterno": "bancox1234" 
+}
+```
+
+**Orientação dos campos:**
+- nome - Identificação do assinante. Nome da instituição parceira.
+- funcionalidadeId - Identificação da funcionalidade assinada. Iremos passar a lista de funcionalidades disponíveis.
+- url - Url que receberá as mensagem enviadas pelo WebHook. Sugerimos o uso de https://webhook.site/ para homologação.
+- idExterno - Identificação externa 
+
+
+**Resultado com sucesso:**
+```
+{
+  "sucesso": true,
+  "mensagem": "Assinatura realizada com sucesso.",
+  "validadeToken": "Token expira em : 55 minutos e 36 segundos."
+}
+StatusCode: 200
+```
+**Resultado com falha:**
+```
+{
+  "sucesso": false,
+  "mensagem": "Erro ao cadastrar assinatura.",
+  "validadeToken": "Token expira em : 55 minutos e 36 segundos."
+}
+StatusCode: 400
+```
+Após a assinatura do serviço, você já estará apto a receber notificações de pagamentos (quando ocorrerem).
+Em caso de ocorrência de tentativa de pagamento, iremos disparar uma request POST à url assinada no passo anterior com os detalhes do pagamento.
+**Payload em caso de sucesso no pagamento**
+```
+{
+  "data": {
+    "uid": "LTYz0DA5MzQ3Mw==",
+    "sucess": true,
+    "service": "ClaroEcommerce-S3",
+    "statusCode": "3",
+    "statusMessage": "AUTHORIZED",
+    "transactionId": "200-027-2022055-22104-145334446",
+    "flag": "visa",
+    "card": "483150-2271",
+    "value": 79,
+    "numberInstallments": 1,
+    "orderId": "300003022104",
+    "orderDate": "2022-02-24T16:20:24.7917546-03:00",
+    "acquirator": {
+      "nsu": "16473705",
+      "authorizationCode": "068998",
+      "acquiratorCode": "27",
+      "transactionId": "",
+      "responseCode": "16473705",
+      "responseDescription": "APPROVED"
+    }
+  }
+}
+```
+**Payload em caso de falha no pagamento**
+```
+{
+  "data": {
+    "uid": "LTYz0DA5MzQ3Mw==",
+    "sucess": false,
+    "service": "ClaroEcommerce-S3",
+    "statusCode": "3",
+    "statusMessage": "AUTHORIZED",
+    "transactionId": "200-027-2022055-22104-145334446",
+    "flag": "visa",
+    "card": "483150-2271",
+    "value": 79,
+    "numberInstallments": 1,
+    "orderId": "300003022104",
+    "orderDate": "2022-02-24T16:20:24.7917546-03:00",
+    "acquirator": {
+      "nsu": "16473705",
+      "authorizationCode": "068998",
+      "acquiratorCode": "27",
+      "transactionId": "",
+      "responseCode": "16473705",
+      "responseDescription": "DECLINED"
+    }
+  }
+}
 ```
