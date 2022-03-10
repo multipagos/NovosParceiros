@@ -75,7 +75,7 @@ Seguem detalhes sobre os campos que precisam ser enviados.
 		}
 	]
 }
-*Todos os campos são obrigatórios
+*Todos os campos são obrigatórios com exceção do objeto "FaturaCartao" que deverá ser preenchido conforme a disponibilidade de informações.
 **Números e informações do exemplo são fictícias.
 ***Não esqueça de enviar o token obtido na autenticação como 'Bearer Token'
 ```
@@ -108,7 +108,7 @@ Seguem detalhes sobre os campos que precisam ser enviados.
     "mensagem": "Processo realizado com sucesso.",
     "data": {
         "frameLink": "https://app-framespa-hml.azurewebsites.net/CardFormCustom?token=20220215BB4B51B73011467E9F41CCD76DB52D72",
-	"id": "LTYz0DA5MzQ3Mw=="
+		"orderId": "LTYz0DA5MzQ3Mwaa"
     },
     "totalDeRegistros": 1,
     "mensagemErro": "",
@@ -161,7 +161,6 @@ Para isso, após autenticado com sucesso pela API de geração de Token, realize
 - url - Url que receberá as mensagem enviadas pelo WebHook. Sugerimos o uso de https://webhook.site/ para homologação.
 - idExterno - Identificação externa 
 
-
 **Resultado com sucesso:**
 ```
 {
@@ -182,56 +181,58 @@ StatusCode: 400
 ```
 Após a assinatura do serviço, você já estará apto a receber notificações de pagamentos (quando ocorrerem).
 Em caso de ocorrência de tentativa de pagamento, iremos disparar uma request POST à url assinada no passo anterior com os detalhes do pagamento.
+O campo de referência da request PagParceladoFrame para a mensagem do WebHook é o **"orderId"**.
 **Payload em caso de sucesso no pagamento**
+_Header:_ 
+Content-Type: application/json
 ```
 {
   "data": {
-    "uid": "LTYz0DA5MzQ3Mw==",
     "sucess": true,
     "service": "ClaroEcommerce-S3",
     "statusCode": "3",
     "statusMessage": "AUTHORIZED",
-    "transactionId": "200-027-2022055-22104-145334446",
+    "transactionId": "100-022-2022062-00_15-162429362",
     "flag": "visa",
-    "card": "483150-2271",
-    "value": 79,
-    "numberInstallments": 1,
-    "orderId": "300003022104",
-    "orderDate": "2022-02-24T16:20:24.7917546-03:00",
+    "card": "481716-0881",
+    "value": 6989,
+    "numberInstallments": 2,
+    "orderId": "LTYz0DA5MzQ3Mwaa",
+    "orderDate": "2022-03-03T16:24:29.3628480-03:00",
     "acquirator": {
-      "nsu": "16473705",
-      "authorizationCode": "068998",
-      "acquiratorCode": "27",
-      "transactionId": "",
-      "responseCode": "16473705",
+      "nsu": "239280",
+      "authorizationCode": "670763",
+      "acquiratorCode": "1",
+      "transactionId": "0303042431832",
+      "responseCode": "4",
       "responseDescription": "APPROVED"
     }
   }
 }
 ```
-**Payload em caso de falha no pagamento**
+**Payload em caso de falha na autorização do pagamento**
+_Header:_ 
+Content-Type: application/json
 ```
 {
   "data": {
-    "uid": "LTYz0DA5MzQ3Mw==",
     "sucess": false,
     "service": "ClaroEcommerce-S3",
-    "statusCode": "3",
-    "statusMessage": "AUTHORIZED",
-    "transactionId": "200-027-2022055-22104-145334446",
+    "statusCode": "4",
+    "statusMessage": "UNAUTHORIZED",
+    "transactionId": "100-022-2022062-65410-153728675",
     "flag": "visa",
-    "card": "483150-2271",
-    "value": 79,
-    "numberInstallments": 1,
-    "orderId": "300003022104",
-    "orderDate": "2022-02-24T16:20:24.7917546-03:00",
+    "card": "481716-0881",
+    "value": 6989,
+    "numberInstallments": 2,
+    "orderId": "LTYz0DA5MzQ3Mwaa",
+    "orderDate": "2022-03-03T15:37:28.6770000",
     "acquirator": {
-      "nsu": "16473705",
-      "authorizationCode": "068998",
-      "acquiratorCode": "27",
-      "transactionId": "",
-      "responseCode": "16473705",
-      "responseDescription": "DECLINED"
+      "nsu": "",
+      "authorizationCode": "",
+      "acquiratorCode": "1",
+      "responseCode": "102",
+      "responseDescription": "NOT APPROVED"
     }
   }
 }
