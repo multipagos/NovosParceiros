@@ -114,7 +114,6 @@ Seguem detalhes sobre os campos que precisam ser enviados.
     "mensagemErro": "",
     "validadeToken": "Token expira em : 59 minutos e 1 segundos."
 }
-
 StatusCode: 200
 ```
 **Campo Inválido**
@@ -126,9 +125,9 @@ StatusCode: 200
     "mensagemErro": "O campo (X) é inválido.",
     "validadeToken": "Token expira em : 59 minutos e 1 segundos."
 }
-
 StatusCode: 400
 ```
+
 **Campo obrigatório não preenchido**
 ```
 {
@@ -138,7 +137,54 @@ StatusCode: 400
     "mensagemErro": "O campo (X) é obrigatório e não foi preenchido.",
     "validadeToken": "Token expira em : 59 minutos e 1 segundos."
 }
+StatusCode: 400
+```
 
+**Pagamento Já recebido**
+```
+{
+    "sucesso": false,
+    "mensagem": "Não foi possível efetuar esta ação. Tente mais tarde.",
+    "totalDeRegistros": 0,
+    "mensagemErro": "Ocorreu um erro no Cod Barras: 84670000002203602962021102518700000987654321. Motivo: Não Autorizada - Já Recebido",
+    "validadeToken": "Token expira em : 59 minutos e 1 segundos."
+}
+StatusCode: 400
+```
+
+**Fatura Vencida**
+```
+{
+    "sucesso": false,
+    "mensagem": "Não foi possível efetuar esta ação. Tente mais tarde.",
+    "totalDeRegistros": 0,
+    "mensagemErro": "Ocorreu um erro no Cod Barras: 84670000002203602962021102518700000987654321. Motivo: Não Autorizada - Vencida",
+    "validadeToken": "Token expira em : 59 minutos e 1 segundos."
+}
+StatusCode: 400
+```
+
+**Empresa não Autorizada**
+```
+{
+    "sucesso": false,
+    "mensagem": "Não foi possível efetuar esta ação. Tente mais tarde.",
+    "totalDeRegistros": 0,
+    "mensagemErro": "Ocorreu um erro no Cod Barras: 84670000002203602962021102518700000987654321. Motivo: Não Autorizada - Empresa não Autorizada",
+    "validadeToken": "Token expira em : 59 minutos e 1 segundos."
+}
+StatusCode: 400
+```
+
+**Arrecadação sem Valor no Código de Barras**
+```
+{
+    "sucesso": false,
+    "mensagem": "Não foi possível efetuar esta ação. Tente mais tarde.",
+    "totalDeRegistros": 0,
+    "mensagemErro": "Ocorreu um erro no Cod Barras: 84670000002203602962021102518700000987654321. Motivo: Não Autorizada - Sem valor",
+    "validadeToken": "Token expira em : 59 minutos e 1 segundos."
+}
 StatusCode: 400
 ```
 
@@ -237,3 +283,45 @@ Content-Type: application/json
   }
 }
 ```
+
+**Orientação dos campos:**
+- sucess - true | false - Se true foi autorizado o pagamento.
+- service - Nome do Serviço.
+- statusCode - Status da transação em conjunto com  "statusMessage". Podendo ser:
+	- 0 - Criada / Em andamento
+	- 1 - Autenticada
+	- 2 - Não-Autenticada
+	- 3 - Autorizada pela operadora
+	- 4 - Não-Autorizada pela operadora
+	- 5 - Em Cancelamento
+	- 6 - Cancelado
+	- 7 - Em Captura
+	- 8 - Capturada / Finalizada
+	- 9 - Não-Capturada
+	- 10 - Pagamento Recorrente - Agendado
+	- 16 - Não Cancelada
+	- 19 - Autorizado de fraude
+	- 20 - Cancelado por fraude
+	- 21 - Não Autorizada por erro
+	- 22 - Agendamento Finalizado
+	- 23 - Agendamento Pausado
+	- 409 - Erro de negócio
+- statusMessage - Status da Transação
+- transactionId - Numero da Transação no HUB
+- flag - Bandeira
+- card - Numero do cartão
+- value - Valor total do pagamento
+- numberInstallments - Numero de parcelas realizadas
+- orderId - Código de referência da transação
+- orderDate - Data Hora e segundo da transação de pagamento
+	- acquirator - Informações da Adquirente
+	- nsu - NSU do pagamento
+	- authorizationCode - Código da autorização do pagamento
+	- acquiratorCode - Adquirente. Podendo ser:
+		- CIELO = 1
+		- STONE = 20
+		- GETNET = 22
+		- GLOBALPAYMENTS = 24
+	- transactionId - Numero da transação na Adquirente
+	- responseCode - Código de Resposta da Adquirente (verificar o manual do adquirente)
+	- responseDescription - Descrição da Resposta da Adquirente (verificar o manual do adquirente)
