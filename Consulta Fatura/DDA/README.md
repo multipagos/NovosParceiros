@@ -178,10 +178,12 @@ StatusCode: 200
 StatusCode: 400
 ```
 Após a assinatura do serviço, você já estará apto a receber notificações de pendências de faturas dos clientes enviados anteriormente (caso houverem).
+
 Diariamente iremos procurar por clientes que possuem faturas próximas à data de vencimento. Ao encontrar, iremos disparar uma request POST à url assinada no passo anterior com os detalhes da Fatura.
 
 O campo de referência para identificação do cliente na mensagem do WebHook é o **"IdentificadorCliente"** que corresponde ao CPF/CNPJ do mesmo.
 Segue abaixo detalhes do contrato da request:
+
 _Header:_ 
 Content-Type: application/json
 ```
