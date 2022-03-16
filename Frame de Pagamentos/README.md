@@ -188,6 +188,18 @@ StatusCode: 400
 StatusCode: 400
 ```
 
+**PDV sem forma de pagamento cadastrada**
+```
+{
+    "sucesso": false,
+    "mensagem": "Falha ao obter o frame de pagamentos.",
+    "totalDeRegistros": 0,
+    "mensagemErro": "Nenhuma forma de pagamento encontrada",
+    "validadeToken": "Token expira em : 59 minutos e 1 segundos."
+}
+StatusCode: 400
+```
+
 # **Término do Fluxo: Recebimento de Informações de pagamento via WebHook Multicom**
 Primeiramente, é necessário assinar o WebHook para receber notificações de pagamentos realizados com sucesso no frame.
 Para isso, após autenticado com sucesso pela API de geração de Token, realize a request abaixo.
