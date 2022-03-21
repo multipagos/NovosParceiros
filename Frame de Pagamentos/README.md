@@ -202,30 +202,31 @@ StatusCode: 400
 ```
 # **Utilizando as informações para montar o frame**
 Após a execução do passo acima, será possível a renderização de um iframe autenticado em tela.
-Segue exemplo de como utilizar o frameLink e o frameToke:
+Segue exemplo de como utilizar o frameLink e o frameToken:
+
 **Html**
 ```
-	<div id="divFrame">
-        <iframe allowpaymentrequest="true" id="output_iframe_id"></iframe>
-	</div>
+<div id="divFrame">
+	<iframe allowpaymentrequest="true" id="output_iframe_id"></iframe>
+</div>
 ```
 **Javascript**
 ```
-	$.ajax({
-		type: "GET", 
-		crossDomain: true,
-		url: $("#frameLink").val(),
-		contentType: "application/json",
-		beforeSend: function(xhr, settings){
-			xhr.setRequestHeader("Authorization", `Bearer ${#frameToken}`);
-		},
-		success: function(data){
-			$("#output_iframe_id").attr('src',data.url);
-		},
-		error: function(e) {
-			console.log(e);
-		}
-	});
+$.ajax({
+	type: "GET", 
+	crossDomain: true,
+	url: $("#frameLink").val(),
+	contentType: "application/json",
+	beforeSend: function(xhr, settings){
+	  xhr.setRequestHeader("Authorization", `Bearer ${#frameToken}`);
+	},
+	success: function(data){
+	  $("#output_iframe_id").attr('src',data.url);
+	},
+	error: function(e) {
+	  console.log(e);
+	}
+});
 ```
 **Para mais detalhes vide arquivo de exemplo adicionado nesse artigo: ExemploNavegadorAuthHeader.html**
 
