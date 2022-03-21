@@ -108,6 +108,7 @@ Seguem detalhes sobre os campos que precisam ser enviados.
     "mensagem": "Processo realizado com sucesso.",
     "data": {
         "frameLink": "https://app-framespa-hml.azurewebsites.net/CardFormCustom?token=20220215BB4B51B73011467E9F41CCD76DB52D72",
+		"frameToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoiTXVsdGlwYWdvc0lmcmFtZSIsIm5iZiI6MTY0NzgzMTU4NSwiZXhwIjoxOTYzMTkxNTg1LCJpc3MiOiJIdWJQYWdhbWVudG8iLCJhdWQiOiJFdmVyeW9uZSJ9.yHciL7W5UMtoUpuaz0pyyawAxABrjMgodzmkrxbC-is",
 		"orderId": "LTYz0DA5MzQ3Mwaa"
     },
     "totalDeRegistros": 1,
@@ -199,6 +200,34 @@ StatusCode: 400
 }
 StatusCode: 400
 ```
+# **Utilizando as informações para montar o frame**
+Após a execução do passo acima, será possível a renderização de um iframe autenticado em tela.
+Segue exemplo de como utilizar o frameLink e o frameToke:
+**Html**
+```
+	<div id="divFrame">
+        <iframe allowpaymentrequest="true" id="output_iframe_id"></iframe>
+	</div>
+```
+**Javascript**
+```
+	$.ajax({
+		type: "GET", 
+		crossDomain: true,
+		url: $("#frameLink").val(),
+		contentType: "application/json",
+		beforeSend: function(xhr, settings){
+			xhr.setRequestHeader("Authorization", `Bearer ${#frameToken}`);
+		},
+		success: function(data){
+			$("#output_iframe_id").attr('src',data.url);
+		},
+		error: function(e) {
+			console.log(e);
+		}
+	});
+```
+**Para mais detalhes vide arquivo de exemplo adicionado nesse artigo: ExemploNavegadorAuthHeader.html**
 
 # **Término do Fluxo: Recebimento de Informações de pagamento via WebHook Multicom**
 Primeiramente, é necessário assinar o WebHook para receber notificações de pagamentos realizados com sucesso no frame.
