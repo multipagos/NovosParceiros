@@ -207,7 +207,7 @@ Segue exemplo de como utilizar o frameLink e o frameToken:
 **Html**
 ```
 <div id="divFrame">
-	<iframe allowpaymentrequest="true" id="output_iframe_id"></iframe>
+  <iframe allowpaymentrequest="true" id="output_iframe_id"></iframe>
 </div>
 ```
 **Javascript**
@@ -228,7 +228,8 @@ $.ajax({
 	}
 });
 ```
-**Para mais detalhes vide arquivo de exemplo adicionado nesse artigo: ExemploNavegadorAuthHeader.html**
+
+- **Para mais detalhes vide arquivo de exemplo adicionado nesse artigo: ExemploNavegadorAuthHeader.html**
 
 # **Término do Fluxo: Recebimento de Informações de pagamento via WebHook Multicom**
 Primeiramente, é necessário assinar o WebHook para receber notificações de pagamentos realizados com sucesso no frame.
