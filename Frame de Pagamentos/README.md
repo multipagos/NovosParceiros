@@ -108,8 +108,8 @@ Seguem detalhes sobre os campos que precisam ser enviados.
     "mensagem": "Processo realizado com sucesso.",
     "data": {
         "frameLink": "https://app-framespa-hml.azurewebsites.net/CardFormCustom?token=20220215BB4B51B73011467E9F41CCD76DB52D72",
-		"frameToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoiTXVsdGlwYWdvc0lmcmFtZSIsIm5iZiI6MTY0NzgzMTU4NSwiZXhwIjoxOTYzMTkxNTg1LCJpc3MiOiJIdWJQYWdhbWVudG8iLCJhdWQiOiJFdmVyeW9uZSJ9.yHciL7W5UMtoUpuaz0pyyawAxABrjMgodzmkrxbC-is",
-		"orderId": "LTYz0DA5MzQ3Mwaa"
+	"frameToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoiTXVsdGlwYWdvc0lmcmFtZSIsIm5iZiI6MTY0NzgzMTU4NSwiZXhwIjoxOTYzMTkxNTg1LCJpc3MiOiJIdWJQYWdhbWVudG8iLCJhdWQiOiJFdmVyeW9uZSJ9.yHciL7W5UMtoUpuaz0pyyawAxABrjMgodzmkrxbC-is",
+	"orderId": "LTYz0DA5MzQ3Mwaa"
     },
     "totalDeRegistros": 1,
     "mensagemErro": "",
