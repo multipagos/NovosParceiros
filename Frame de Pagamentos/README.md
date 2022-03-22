@@ -229,7 +229,14 @@ $.ajax({
 });
 ```
 
-- **Para mais detalhes vide arquivo de exemplo adicionado nesse artigo: ExemploNavegadorAuthHeader.html**
+- **Para mais detalhes vide arquivo de exemplo adicionado nesse artigo: [ExemploNavegadorAuthHeader.html](https://github.com/multipagos/NovosParceiros/blob/main/Frame%20de%20Pagamentos/ExemploNavegadorAuthHeader.html)**
+
+
+# **Dados de Teste**
+Para realizar testes de pagamento de faturas, usar os seguintes dados de cartão de crédito:
+Número cartão : 4000 0000 0000 0001
+CVV : 123
+Data : 12/24
 
 # **Término do Fluxo: Recebimento de Informações de pagamento via WebHook Multicom**
 Primeiramente, é necessário assinar o WebHook para receber notificações de pagamentos realizados com sucesso no frame.
