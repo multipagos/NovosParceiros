@@ -70,7 +70,7 @@ Seguem detalhes sobre os campos que precisam ser enviados.
 			"DataDebito": "2022-02-04",
 			"ValorDebito": 125.99,
 			"StatusRetorno": "00",
-			"CodigoMovimento": "1"
+			"CodigoMovimento": "0"
 		},
 		{
 			"CodigoRegistro": "H",

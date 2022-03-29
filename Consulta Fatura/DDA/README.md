@@ -45,7 +45,7 @@ O primeiro passo é realizar a consulta normal do cliente. Essa consulta irá ve
 Seguem detalhes sobre os campos que precisam ser enviados.
 # Consulta de Fatura
 
-- POST /api/DDA/ConsultaFatura **- Atenção: API disponível a partir do dia 18/03 para testes**
+- POST /api/DDA/ConsultaFatura **- Atenção: API disponível a partir do dia 30/03 para testes**
 ```html
 {
   "EmpresaId": 8,
