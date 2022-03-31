@@ -209,7 +209,7 @@ Em caso de um cliente cancelar o uso de seu serviço, e vocês não desejam mais
 - PUT /api/v1/DDA/InativarAgendamento 
 ```
 {
-  "identificacaoCliente": "string"
+  "identificacaoCliente": "12345678912"
 }
 *Não esquecer de estar autenticado na nossa API de Token.
 ```
@@ -234,5 +234,6 @@ StatusCode: 200
 }
 StatusCode: 400
 ```
+
 
 Caso seu cliente deseja retornar e você desejar agendar ele novamente no serviço, basta fazer novo cadastro em POST /api/DDA/ConsultaFatura.
