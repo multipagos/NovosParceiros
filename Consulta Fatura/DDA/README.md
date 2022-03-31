@@ -45,7 +45,7 @@ O primeiro passo é realizar a consulta normal do cliente. Essa consulta irá ve
 Seguem detalhes sobre os campos que precisam ser enviados.
 # Consulta de Fatura
 
-- POST /api/DDA/ConsultaFatura **- Atenção: API disponível a partir do dia 30/03 para testes**
+- POST /api/v1/DDA/ConsultaFatura 
 ```html
 {
   "EmpresaId": 8,
@@ -202,3 +202,37 @@ Content-Type: application/json
 - Fatura - Número de Código de Barras
 - Valor - Valor da fatura
 - Empresa - Empresa referente à fatura.
+
+# **Inativar um Agendamento de Cliente**
+Em caso de um cliente cancelar o uso de seu serviço, e vocês não desejam mais receber notificações de faturas desse cliente, basta você inativar ele em nossa base por essa API e então você não receberá mais notificações desse cliente.
+
+- PUT /api/v1/DDA/InativarAgendamento 
+```
+{
+  "identificacaoCliente": "string"
+}
+*Não esquecer de estar autenticado na nossa API de Token.
+```
+
+**Resultado com sucesso:**
+```
+{
+    "sucesso": true,
+    "mensagem": "Cliente inativado com sucesso",
+    "totalDeRegistros": 1,
+    "mensagemErro": ""
+}
+StatusCode: 200
+```
+**Resultado com falha:**
+```
+{
+    "sucesso": false,
+    "mensagem": "Não foi possível realizar a operação.",
+    "totalDeRegistros": 1,
+    "mensagemErro": "Cliente não encontrado"
+}
+StatusCode: 400
+```
+
+Caso seu cliente deseja retornar e você desejar agendar ele novamente no serviço, basta fazer novo cadastro em POST /api/DDA/ConsultaFatura.

@@ -178,23 +178,32 @@ Os demais campos podem variar de acor dom o CodigoRegistro. Podendo ser:
 
 # **Exemplo de Fluxo de Débito Automático**
 A seguir, temos um exemplo de uma request de cadastramento de correntistas que fizeram a adesão do Débito Automático.
-Primeiramente, é necessário assinar o WebHook para receber notificações de Débito Automático
-Após autenticado com sucesso, realize a request abaixo.
+Primeiramente, é necessário assinar o WebHook para receber notificações de Débito Automático.
+Após autenticado com sucesso em nossa API de Token, realize a request abaixo.
 - POST /api/v1/WebHook/AssinarWebHook
 ```
 {
   "nome": "Banco X",
   "funcionalidadeId": 4,
-  "url": "SuaUrlAqui/resource", 
-  "idExterno": "bancox1234" 
+  "url": "https://SuaUrlAqui/resource", 
+  "idExterno": "bancox1234",
+  "tipoAutenticacao": 1,
+  "objetoAutenticacao": "{'user': 'nossoUsuarioDeAutenticacao','password': 'nossaSenhaDeAutenticacao'}',
+  "urlAutenticacao": "https://SuaUrlAqui.com.br/api/Login/Token",
+  "campoToken": "token"  
 }
 ```
 
 **Orientação dos campos:**
-- nome - Identificação do assinante. Nome da instituição parceira
-- funcionalidadeId - Identificação da funcionalidade assinada. Iremos passar a lista de funcionalidades disponíveis.
-- url - Url que receberá as mensagem enviadas pelo WebHook. Sugerimos o uso de https://webhook.site/ para homologação.
-- idExterno - Identificação externa 
+- nome - Identificação do assinante. Nome da instituição parceira. Obrigatório.
+- funcionalidadeId - Identificação da funcionalidade assinada. Iremos passar a lista de funcionalidades disponíveis. Obrigatório.
+- url - Url que receberá as mensagem enviadas pelo WebHook. Sugerimos o uso de https://webhook.site/ para homologação. Obrigatório.
+- idExterno - Identificação combinada conosco para recebimento de mensagens. Obrigatório.
+- tipoAutenticacao - Indicação de necessidade de autenticação ou não do campo 'url'. Obrigatório. Podendo ser:
+	- 0 - Nenhuma
+	- 1 - Bearer Token
+- objetoAutenticacao - Campo string indicando as informações necessárias para autenticarmos em sua 'url'. Obrigatório se 'tipoAutenticacao' for diferente de 0.
+- campoToken - Identificador da propriedade do response que conterá o token de autenticação. Obrigatório se 'tipoAutenticacao' for diferente de 0.
 
 
 **Resultado com sucesso:**
