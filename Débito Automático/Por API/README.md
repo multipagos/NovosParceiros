@@ -58,7 +58,7 @@ Seguem detalhes sobre os campos que precisam ser enviados.
 			"IdentificacaoClienteEmpresa": "00000001008",
 			"AgenciaDebito": "001",
 			"IdentificacaoClienteBanco": "00000001123",
-			"DataOperacao": "2022-02-04T12:01:02",
+			"DataOperacao": "2022-02-04",
 			"CodigoMovimento": "1"
 		},
 		{
