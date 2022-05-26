@@ -145,19 +145,36 @@ Primeiramente, é necessário assinar o WebHook para receber notificações de f
 Para isso, após autenticado com sucesso pela API de geração de Token, realize a request abaixo.
 - POST /api/v1/WebHook/AssinarWebHook
 ```
-{
+{  
   "nome": "Banco X",
   "funcionalidadeId": 6,
-  "url": "SuaUrlAqui/resource", 
-  "idExterno": "bancox1234" 
+  "url": "SuaUrlAqui/resource",
+  "tipoAutenticacao": 0,
+  "objetoAutenticacao": "string",
+  "urlAutenticacao": "string",
+  "campoToken": "string"
 }
 ```
 
 **Orientação dos campos:**
 - nome - Identificação do assinante. Nome da instituição parceira.
-- funcionalidadeId - Identificação da funcionalidade assinada. Iremos passar a lista de funcionalidades disponíveis.
-- url - Url que receberá as mensagem enviadas pelo WebHook. Sugerimos o uso de https://webhook.site/ para homologação.
-- idExterno - Identificação externa 
+- funcionalidadeId - Identificação da funcionalidade assinada. Favor informar o valor 6 que equivale ao produto DDA.
+- url - Url que receberá as mensagem/notificações enviadas pelo WebHook. Sugerimos o uso de https://webhook.site/ para homologação.
+- tipoAutenticacao - Indicativo do tipo de Autenticação o WebHook deverá realizar antes de enviar a notificação. Podendo ser:
+	- 0 - Nenhuma
+	- 1 - Bearer Token
+	- 2 - Bearer Cognito AWS
+	- Caso você não utilize nenhuma dessas autenticações, favor sinalizar para viabilizarmos o desenvolvimento.
+- objetoAutenticacao - Objeto completo da autenticação. Obrigatório caso o campo tipoAutenticacao for diferente de 0. Exemplo: "{"usuario": "InformeAquiOUsuario","senha": "InformeAquiASenha"}"
+- urlAutenticacao - Url completa do endpoint de autenticação. Exemplo: "https://sandbox.multipagos.com.br/api/Multipagos/Token"
+- campoToken - Propriedade responsável por indicar onde o token de autenticação estará no retorno da request. Exemplo:
+_No exemplo abaixo, o campo "token" é o campo que precisaria ser indicado em "campoToken"._
+```html
+{
+    "sucesso": true,
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6IjEiLCJuYmYiOjE2MTU5MDg0MjQsImV4cCI6MTYxNTkwODQ4NCwiaWF0IjoxNjE1OTA4NDI0fQ.Iy7m-U1KPomjQTh2tN3X5gGXn6LvE3W4H3dBRnc5-7s"
+}
+```
 
 **Resultado com sucesso:**
 ```
