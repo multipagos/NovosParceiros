@@ -45,7 +45,7 @@ O primeiro passo é realizar a consulta normal do cliente. Essa consulta irá ve
 Seguem detalhes sobre os campos que precisam ser enviados.
 # Consulta de Fatura
 
-- POST /api/v1/DDA/ConsultaFatura 
+- POST /api/v1/DDA/realizaConsulta 
 ```html
 {
   "EmpresaId": 8,
