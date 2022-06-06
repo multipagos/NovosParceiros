@@ -70,7 +70,7 @@ Seguem detalhes sobre os campos que precisam ser enviados.
 			"DataDebito": "2022-02-04",
 			"ValorDebito": 125.99,
 			"StatusRetorno": "00",
-			"CodigoMovimento": "0"
+			"CodigoMovimento": "1"
 		},
 		{
 			"CodigoRegistro": "H",
@@ -79,7 +79,7 @@ Seguem detalhes sobre os campos que precisam ser enviados.
 			"IdentificacaoClienteBanco": "00000001555",
 			"IdentificacaoClienteNovo": "00000001478",
 			"Ocorrencia": "Descrição da rejeição",
-			"CodigoMovimento": "3"
+			"CodigoMovimento": "1"
 		}
 	]
 }
@@ -186,9 +186,8 @@ Após autenticado com sucesso em nossa API de Token, realize a request abaixo.
   "nome": "Banco X",
   "funcionalidadeId": 4,
   "url": "https://SuaUrlAqui/resource", 
-  "idExterno": "bancox1234",
   "tipoAutenticacao": 1,
-  "objetoAutenticacao": "{'user': 'nossoUsuarioDeAutenticacao','password': 'nossaSenhaDeAutenticacao'}',
+  "objetoAutenticacao": "{'user': 'nossoUsuarioDeAutenticacao','password': 'nossaSenhaDeAutenticacao'}",
   "urlAutenticacao": "https://SuaUrlAqui.com.br/api/Login/Token",
   "campoToken": "token"  
 }
@@ -196,14 +195,25 @@ Após autenticado com sucesso em nossa API de Token, realize a request abaixo.
 
 **Orientação dos campos:**
 - nome - Identificação do assinante. Nome da instituição parceira. Obrigatório.
-- funcionalidadeId - Identificação da funcionalidade assinada. Iremos passar a lista de funcionalidades disponíveis. Obrigatório.
+- funcionalidadeId - Identificação da funcionalidade assinada. Favor informar o valor 4 que equivale ao produto Débito Automático por API. Obrigatório.
 - url - Url que receberá as mensagem enviadas pelo WebHook. Sugerimos o uso de https://webhook.site/ para homologação. Obrigatório.
-- idExterno - Identificação combinada conosco para recebimento de mensagens. Obrigatório.
 - tipoAutenticacao - Indicação de necessidade de autenticação ou não do campo 'url'. Obrigatório. Podendo ser:
 	- 0 - Nenhuma
 	- 1 - Bearer Token
+	- 2 - Basic Auth - em desenvolvimento
+	- 3 - Bearer Cognito AWS
+	- Caso você não utilize nenhuma dessas autenticações, favor sinalizar para viabilizarmos o desenvolvimento.
 - objetoAutenticacao - Campo string indicando as informações necessárias para autenticarmos em sua 'url'. Obrigatório se 'tipoAutenticacao' for diferente de 0.
-- campoToken - Identificador da propriedade do response que conterá o token de autenticação. Obrigatório se 'tipoAutenticacao' for diferente de 0.
+*Importante:* Por ser um campo String, precisa ter aspas duplas ao redor da resposta. Favor converter as aspas duplas de seu objeto em aspas simples. Exemplo: "{'user': 'nossoUsuarioDeAutenticacao','password': 'nossaSenhaDeAutenticacao'}" 
+- urlAutenticacao - Url completa do endpoint de autenticação. Obrigatório se 'tipoAutenticacao' for diferente de 0. Exemplo: "https://sandbox.multipagos.com.br/api/Multipagos/Token"
+- campoToken - Propriedade responsável por indicar onde o token de autenticação estará no retorno da request. Exemplo:
+_No exemplo abaixo, o campo "token" é o campo que precisaria ser indicado em "campoToken"._
+```html
+{
+    "sucesso": true,
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6IjEiLCJuYmYiOjE2MTU5MDg0MjQsImV4cCI6MTYxNTkwODQ4NCwiaWF0IjoxNjE1OTA4NDI0fQ.Iy7m-U1KPomjQTh2tN3X5gGXn6LvE3W4H3dBRnc5-7s"
+}
+```
 
 
 **Resultado com sucesso:**
@@ -319,7 +329,7 @@ Após autenticado com sucesso em nossa API de Token, realize a request abaixo.
 			"ValorDebito": 30.50,
 			"CodigoMoeda": "BRL",
 			"UsoEmpresa": "",
-			"CodigoMovimento": "0"
+			"CodigoMovimento": "1"
 		},
 		{
 			"CodigoRegistro": "E",
@@ -330,7 +340,7 @@ Após autenticado com sucesso em nossa API de Token, realize a request abaixo.
 			"ValorDebito": 99.99,
 			"CodigoMoeda": "BRL",
 			"UsoEmpresa": "",
-			"CodigoMovimento": "0"
+			"CodigoMovimento": "1"
 		},
 		{
 			"CodigoRegistro": "E",
@@ -341,7 +351,7 @@ Após autenticado com sucesso em nossa API de Token, realize a request abaixo.
 			"ValorDebito": 49,54,
 			"CodigoMoeda": "BRL",
 			"UsoEmpresa": "",
-			"CodigoMovimento": "0"
+			"CodigoMovimento": "1"
 		},
 		{
 			"CodigoRegistro": "E",
@@ -352,7 +362,7 @@ Após autenticado com sucesso em nossa API de Token, realize a request abaixo.
 			"ValorDebito": 234.89,
 			"CodigoMoeda": "BRL",
 			"UsoEmpresa": "",
-			"CodigoMovimento": "0"
+			"CodigoMovimento": "1"
 		},
 		{
 			"CodigoRegistro": "E",
@@ -363,7 +373,7 @@ Após autenticado com sucesso em nossa API de Token, realize a request abaixo.
 			"ValorDebito": 370.11,
 			"CodigoMoeda": "BRL",
 			"UsoEmpresa": "",
-			"CodigoMovimento": "0"
+			"CodigoMovimento": "1"
 		},
 		{
 			"CodigoRegistro": "D",
@@ -372,7 +382,7 @@ Após autenticado com sucesso em nossa API de Token, realize a request abaixo.
 			"IdentificacaoClienteBanco": "00000001135",   
 			"IdentificacaoClienteEmpresaNovo": "00000002222",
 			"Ocorrencia": "Motivo ocorrência",
-			"CodigoMovimento": "0"
+			"CodigoMovimento": "1"
 		},
 		{
 			"CodigoRegistro": "C",
