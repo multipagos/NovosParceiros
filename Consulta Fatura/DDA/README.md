@@ -163,12 +163,25 @@ Para isso, após autenticado com sucesso pela API de geração de Token, realize
 - tipoAutenticacao - Indicação de necessidade de autenticação ou não do campo 'url'. Obrigatório. Podendo ser:
 	- 0 - Nenhuma
 	- 1 - Bearer Token
-	- 2 - Basic Auth - em desenvolvimento
+	- 2 - Basic Auth
 	- 3 - Bearer Cognito AWS
 	- Caso você não utilize nenhuma dessas autenticações, favor sinalizar para viabilizarmos o desenvolvimento.
 - objetoAutenticacao - Campo string indicando as informações necessárias para autenticarmos em sua 'url'. Obrigatório se 'tipoAutenticacao' for diferente de 0.
 
-**Importante:** Por ser um campo String, precisa ter aspas duplas ao redor da resposta. Favor converter as aspas duplas de seu objeto em aspas simples. Exemplo: "{'user': 'nossoUsuarioDeAutenticacao','password': 'nossaSenhaDeAutenticacao'}" 
+**Importante:** Por ser um campo String, precisa ter aspas duplas ao redor da resposta. Favor converter as aspas duplas de seu objeto em aspas simples. 
+
+**Exemplos:**
+```
+- TipoAutenticacao = 1 (Bearer Token)
+	Ex: "{'user': 'nossoUsuarioDeAutenticacao','password': 'nossaSenhaDeAutenticacao'}" 
+
+- TipoAutenticacao = 2 (Basic Auth)
+	Ex: "usuario:senha"
+
+- TipoAutenticacao = 3 (Bearer Cognito AWS)
+	Ex: "{'user': 'nossoUsuarioDeAutenticacao','password': 'nossaSenhaDeAutenticacao', 'scope': 'escopo'}" 
+```
+
 - urlAutenticacao - Url completa do endpoint de autenticação.Obrigatório se 'tipoAutenticacao' for diferente de 0. Exemplo: "https://sandbox.multipagos.com.br/api/Multipagos/Token"
 - campoToken - Propriedade responsável por indicar onde o token de autenticação estará no retorno da request. Exemplo:
 _No exemplo abaixo, o campo "token" é o campo que precisaria ser indicado em "campoToken"._
