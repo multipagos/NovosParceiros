@@ -167,7 +167,8 @@ Para isso, após autenticado com sucesso pela API de geração de Token, realize
 	- 3 - Bearer Cognito AWS
 	- Caso você não utilize nenhuma dessas autenticações, favor sinalizar para viabilizarmos o desenvolvimento.
 - objetoAutenticacao - Campo string indicando as informações necessárias para autenticarmos em sua 'url'. Obrigatório se 'tipoAutenticacao' for diferente de 0.
-*Importante:* Por ser um campo String, precisa ter aspas duplas ao redor da resposta. Favor converter as aspas duplas de seu objeto em aspas simples. Exemplo: "{'user': 'nossoUsuarioDeAutenticacao','password': 'nossaSenhaDeAutenticacao'}" 
+
+**Importante:** Por ser um campo String, precisa ter aspas duplas ao redor da resposta. Favor converter as aspas duplas de seu objeto em aspas simples. Exemplo: "{'user': 'nossoUsuarioDeAutenticacao','password': 'nossaSenhaDeAutenticacao'}" 
 - urlAutenticacao - Url completa do endpoint de autenticação.Obrigatório se 'tipoAutenticacao' for diferente de 0. Exemplo: "https://sandbox.multipagos.com.br/api/Multipagos/Token"
 - campoToken - Propriedade responsável por indicar onde o token de autenticação estará no retorno da request. Exemplo:
 _No exemplo abaixo, o campo "token" é o campo que precisaria ser indicado em "campoToken"._
