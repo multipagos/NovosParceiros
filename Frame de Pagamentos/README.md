@@ -202,6 +202,7 @@ StatusCode: 400
 ```
 
 **Nova Regra: Limite de pagamento de 1500,00**
+
 **Cliente tentar pagar uma fatura superior ao limite**
 ```
 {
