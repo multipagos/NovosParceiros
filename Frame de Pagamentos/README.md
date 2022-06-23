@@ -200,6 +200,19 @@ StatusCode: 400
 }
 StatusCode: 400
 ```
+
+**Nova Regra: Limite de pagamento de 1500,00**
+**Cliente tentar pagar uma fatura superior ao limite**
+```
+{
+    "sucesso": false,
+    "mensagem": "108 - Não Autorizado. Valor não permitido para esse tipo de cartão",
+    "totalDeRegistros": 1,
+    "mensagemErro": "",
+    "validadeToken": "Token expira em : 59 minutos e 1 segundos."
+}
+StatusCode: 400
+```
 # **Utilizando as informações para montar o frame**
 Após a execução do passo acima, será possível a renderização de um iframe autenticado em tela.
 Segue exemplo de como utilizar o frameLink e o frameToken:
