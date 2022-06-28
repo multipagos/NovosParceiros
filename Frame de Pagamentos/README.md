@@ -262,16 +262,51 @@ Para isso, após autenticado com sucesso pela API de geração de Token, realize
 {
   "nome": "Banco X",
   "funcionalidadeId": 5,
-  "url": "SuaUrlAqui/resource", 
+  "url": "https://SuaUrlAqui/resource", 
+  "tipoAutenticacao": 1,
+  "objetoAutenticacao": "{'user': 'nossoUsuarioDeAutenticacao','password': 'nossaSenhaDeAutenticacao'}",
+  "urlAutenticacao": "https://SuaUrlAqui.com.br/api/Login/Token",
+  "campoToken": "token", 
   "idExterno": "bancox1234" 
 }
 ```
 
 **Orientação dos campos:**
 - nome - Identificação do assinante. Nome da instituição parceira.
-- funcionalidadeId - Identificação da funcionalidade assinada. Iremos passar a lista de funcionalidades disponíveis.
+- funcionalidadeId - Identificação da funcionalidade assinada. Favor setar aqui o valor 5 pois é referente à funcionalidade de Notificações de Pagamentos via Frame.
 - url - Url que receberá as mensagem enviadas pelo WebHook. Sugerimos o uso de https://webhook.site/ para homologação.
-- idExterno - Identificação externa 
+- tipoAutenticacao - Indicação de necessidade de autenticação ou não do campo 'url'. Obrigatório. Podendo ser:
+	- 0 - Nenhuma
+	- 1 - Bearer Token
+	- 2 - Basic Auth
+	- 3 - Bearer Cognito AWS
+	- Caso você não utilize nenhuma dessas autenticações, favor sinalizar para viabilizarmos o desenvolvimento.
+- objetoAutenticacao - Campo string indicando as informações necessárias para autenticarmos em sua 'url'. Obrigatório se 'tipoAutenticacao' for diferente de 0.
+
+**Importante:** Por ser um campo String, precisa ter aspas duplas ao redor da resposta. Favor converter as aspas duplas de seu objeto em aspas simples. 
+
+**Exemplos:**
+```
+- TipoAutenticacao = 1 (Bearer Token)
+	Ex: "{'user': 'nossoUsuarioDeAutenticacao','password': 'nossaSenhaDeAutenticacao'}" 
+
+- TipoAutenticacao = 2 (Basic Auth)
+	Ex: "usuario:senha"
+
+- TipoAutenticacao = 3 (Bearer Cognito AWS)
+	Ex: "{'user': 'nossoUsuarioDeAutenticacao','password': 'nossaSenhaDeAutenticacao', 'scope': 'escopo'}" 
+```
+
+- urlAutenticacao - Url completa do endpoint de autenticação.Obrigatório se 'tipoAutenticacao' for diferente de 0. Exemplo: "https://sandbox.multipagos.com.br/api/Multipagos/Token"
+- campoToken - Propriedade responsável por indicar onde o token de autenticação estará no retorno da request. Exemplo:
+_No exemplo abaixo, o campo "token" é o campo que precisaria ser indicado em "campoToken"._
+```html
+{
+    "sucesso": true,
+    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6IjEiLCJuYmYiOjE2MTU5MDg0MjQsImV4cCI6MTYxNTkwODQ4NCwiaWF0IjoxNjE1OTA4NDI0fQ.Iy7m-U1KPomjQTh2tN3X5gGXn6LvE3W4H3dBRnc5-7s"
+}
+```
+- idExterno - Identificação externa combinada entre as partes
 
 **Resultado com sucesso:**
 ```
@@ -291,6 +326,7 @@ StatusCode: 200
 }
 StatusCode: 400
 ```
+
 Após a assinatura do serviço, você já estará apto a receber notificações de pagamentos (quando ocorrerem).
 Em caso de ocorrência de tentativa de pagamento, iremos disparar uma request POST à url assinada no passo anterior com os detalhes do pagamento.
 O campo de referência da request PagParceladoFrame para a mensagem do WebHook é o **"orderId"**.
