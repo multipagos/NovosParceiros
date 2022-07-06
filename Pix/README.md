@@ -80,20 +80,20 @@ Será retornada a mensagem de sucesso juntamente com o campo **qrCodeBase64_Resu
 
 **Chave Não Informada**
 ```html
-{
-    "Chave": [
-        "O Campo Identificador deve Ser Informada"
-    ]
+{   
+	"sucesso": false,   
+	"mensagem": "Não foi possível efetuar esta ação. Tente mais tarde.",  
+	"mensagemErro": "O Campo Chave deve ser Informado"
 }
 StatusCode: 400
 ```
 
 **Valor Não Informado**
 ```html
-{
-    "Valor": [
-        "O Valor deve Ser Informado"
-    ]
+{   
+	"sucesso": false,   
+	"mensagem": "Não foi possível efetuar esta ação. Tente mais tarde.",  
+	"mensagemErro": "O Valor deve Ser Informado"
 }
 StatusCode: 400
 ```
