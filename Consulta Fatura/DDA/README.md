@@ -74,7 +74,6 @@ Retorno em caso de sucesso em obter fatura:
                 "vencimento": "2021-01-01",
                 "fatura": "846000000000362007101022748063700980021196891234",
                 "valor": 105.2,	
-                "pendenciaOriginal": "<?xml version=\"1.0\"?>\r\n<NetClaroFatura xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xmlns:xsd=\"http://www.w3.org/2001/XMLSchema\">\r\n  <billAmount>105.20</billAmount>\r\n  <paymentDueDate>2021-01-01T00:00:00</paymentDueDate>\r\n  <status>Aberta</status>\r\n  <billCode>846000000000362007101022748063700980021196891234</billCode>\r\n  <name>NOME DO USUÁRIO AQUI</name>\r\n  <partyIdentificationNumber>12345678912</partyIdentificationNumber>\r\n</NetClaroFatura>",
                 "empresa": "NET"
             }
         ]
