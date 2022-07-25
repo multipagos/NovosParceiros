@@ -40,8 +40,9 @@ Retorno em caso de falha:
     "message": "Pdv ou Terminal inválidos."
 }
 ```
-# **Início do Fluxo: Realizar consulta de Fatura de Cliente**
-O primeiro passo é realizar a consulta normal do cliente. Essa consulta irá verificar se o cliente possui pendências e ao final iremos guardar as informações recebidas para que antes do próximo vencimento, de forma proativa, enviaremos à vocês as pendências do cliente para oferecerem o pagamento.
+# **Início do Fluxo: Registrar Cliente no Serviço de Consulta Faturas**
+O primeiro passo é registrar o cliente. Com esse cadastro nós faremos uma inclusão do cliente em nosso serviço de consulta recorrente de faturas Claro.
+
 Seguem detalhes sobre os campos que precisam ser enviados.
 # Consulta de Fatura
 
@@ -66,35 +67,10 @@ Retorno em caso de sucesso em obter fatura:
 ```html
 {
     "sucesso": true,
-    "mensagem": "listagem efetuada",
-    "data": {
-        "identificacaoCliente": "12345678912",
-        "pendencias": [
-            {
-                "vencimento": "2021-01-01",
-                "fatura": "846000000000362007101022748063700980021196891234",
-                "valor": 105.2,	
-                "empresa": "NET"
-            }
-        ]
-    },
+    "mensagem": "Cliente inserido com sucesso, o retorno das faturas será enviado por webhook",
     "totalDeRegistros": 1,
-    "mensagemErro": ""
-}
-```
-
-
-Retorno em caso de não encontrar fatura em aberto para o cliente:
-```html
-{
-    "sucesso": true,
-    "mensagem": "Nenhuma fatura em aberto foi encontrada",
-    "data": {
-        "identificacaoCliente": "12345678912",
-        "pendencias": []
-    },
-    "totalDeRegistros": 0,
-    "mensagemErro": ""
+    "mensagemErro": "",
+    "validadeToken": ""
 }
 ```
 
@@ -221,20 +197,25 @@ _Header:_
 Content-Type: application/json
 ```
 {
-  "IdentificadorCliente": "00000000000",
-  "DataVencimento":"2023-01-01",
-  "Fatura":"84670000002203602962021102518700000987654321",
-  "Valor": 220.36,
-  "Empresa": "NET",
+  "IdentificacaoCliente": "00000000000",
+  "Pendencias": [
+    {
+      "Vencimento": "2022-08-08",
+      "Fatura": "84670000002203602962021102518700000987654321",
+      "Valor": 66.34,
+      "Empresa": "CLARO"
+    }
+  ]
 }
 ```
 
 **Orientação dos campos:**
 - IdentificadorCliente - Identificação do cliente (CPF/CNPJ).
-- DataVencimento - Data de vencimento da fatura mais recente.
-- Fatura - Número de Código de Barras
-- Valor - Valor da fatura
-- Empresa - Empresa referente à fatura.
+- Pendencias - Lista de faturas em aberta do cliente
+	- DataVencimento - Data de vencimento da fatura mais recente.
+	- Fatura - Número de Código de Barras
+	- Valor - Valor da fatura
+	- Empresa - Empresa referente à fatura.
 
 # **Inativar um Agendamento de Cliente**
 Em caso de um cliente cancelar o uso de seu serviço, e vocês não desejam mais receber notificações de faturas desse cliente, basta você inativar ele em nossa base por essa API e então você não receberá mais notificações desse cliente.
