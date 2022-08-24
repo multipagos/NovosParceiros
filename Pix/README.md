@@ -52,7 +52,7 @@ Para gerar o QrCode contendo as informações corretas de recebimento da fatura,
 ```html
 {
     "Chave": "848500000005439901582027106201197257824014221231",
-    "Valor" : 1252.32
+    "Valor" : "1252.32"
 }
 ```
 **Orientação dos campos:**
@@ -128,8 +128,7 @@ Para isso, após autenticado com sucesso pela API de geração de Token, realize
   "tipoAutenticacao": 1,
   "objetoAutenticacao": "{'user': 'nossoUsuarioDeAutenticacao','password': 'nossaSenhaDeAutenticacao'}",
   "urlAutenticacao": "https://SuaUrlAqui.com.br/api/Login/Token",
-  "campoToken": "token", 
-  "idExterno": "bancox1234" 
+  "campoToken": "token"
 }
 ```
 
@@ -168,7 +167,6 @@ _No exemplo abaixo, o campo "token" é o campo que precisaria ser indicado em "c
     "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6IjEiLCJuYmYiOjE2MTU5MDg0MjQsImV4cCI6MTYxNTkwODQ4NCwiaWF0IjoxNjE1OTA4NDI0fQ.Iy7m-U1KPomjQTh2tN3X5gGXn6LvE3W4H3dBRnc5-7s"
 }
 ```
-- idExterno - Identificação externa combinada entre as partes
 
 **Resultado com sucesso:**
 ```
@@ -241,7 +239,7 @@ Content-Type: application/json
 	- 409 - Erro de negócio
 - statusMessage - Status da Transação
 - transactionId - Numero da Transação no MULTIPAGOS
-- value - Valor total do pagamento
+- value - Valor total do pagamento. Ex: Se o campo for "value:30000"  significa que são o valor é R$300,00.
 - txId - Código de referência da transação
 - orderDate - Data Hora e segundo da transação de pagamento
 	- authorizationCode - Código da autorização do pagamento
