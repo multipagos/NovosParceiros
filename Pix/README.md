@@ -199,8 +199,8 @@ Content-Type: application/json
   "data": {
     "sucess": true,
     "service": "PagamentoViaPix",
-    "statusCode": "3",
-    "statusMessage": "AUTHORIZED",
+    "statusCode": "8",
+    "statusMessage": "Capturada / Finalizada",
     "transactionId": "00000000-0000-0000-0000-000000000000",
     "value": 6989,
     "TxId" : "1010221337390838003661235",
