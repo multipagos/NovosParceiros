@@ -7,9 +7,7 @@ Através da documentação abaixo você será capaz de utilizar os serviços Mul
 Qualquer dúvida que possa ter, fique à vontade de enviar um e-mail para team-mpagos@multipagos.com.br que iremos te ajudar.
 
 #Pagamento de Arrecadações Direto
-Disponibilizamos 1 API para a realização do processo de pagamento com sucesso.
-A API tem como objetivo realizar o registro de pagamento de uma forma mais ágil e direta.
-**Atenção: Essa API não pode ser utilizada em conjunto com o Pagamento de Arrecadações por Etapas**
+Disponibilizamos duas APIs para a realização do processo de pagamento. Uma para consulta do status da arrecadação (de uso não obrigatório) e outra para registrar o pagamento de uma forma mais ágil e direta.
 
 # SandBox
 Disponibilizamos um ambiente SandBox para que você possa realizar os testes. Fique à vontade para usar!
@@ -44,6 +42,88 @@ Retorno em caso de falha:
 }
 ```
 
+# Consulta Detalhes da Fatura
+Antes de realizar a venda em sua plataforma, caso deseje realizar uma consulta de informações da fatura, basta realizar a seguinte request:
+
+- POST /api/Multipagos/Arrecadacao
+```html
+{
+    "CodigoInformado": "84800000000018601622022081514940937601021123",
+    "Origem": 30,
+    "Valor": 1.86
+}
+
+*Não esqueça de enviar o token obtido na autenticação como 'Bearer Token'
+```
+**Orientação dos campos:**
+- CodigoInformado: Código de Barras da fatura - Alfanumérico(44) - obrigatório
+- Origem: Identificação da origem do recebimento dessa consulta. Favor informar fixo 30. - Obrigatório
+- Valor: Valor efetivamente recebido - Decimal(10) + V(99) - Não Obrigatório
+
+
+# Mensagens de retorno possíveis:
+De acordo com as informações recebidas, durante as nossas validações, podemos retornar as seguintes mensagens:
+
+**Arrecadação recebida com sucesso**
+```html
+{
+    "sucesso": true,
+    "mensagem": "Autorização efetuada com sucesso.",
+	"data": {
+		"statusArrecadacao" : "Autorizada",
+		"codigoDeBarras": "84800000000018601622022081514940937601021123",
+		"valor": 1.86,
+		"empresaOrgaoId": "0162",
+		"dataVencimento": "2022-09-30T00:00:00",
+		"nomeEmpresa": "CLARO SP DDD 11"
+	},
+	"totalDeRegistros": 1,
+	"mensagemErro": "",
+	"validadeToken": "Token expira em: 45 minutos e 26 segundos."
+}
+StatusCode: 200
+```
+**Orientação dos campos:**
+- StatusArrecadacao: Código de status da arrecadação. Podendo ser:
+  - Autorizada
+  - Pagamento Concluído
+  - Empresa não Autorizada
+  - Já Recebido
+  - Sem valor
+- CodigoDeBarras: Código de Barras recebido.
+- Valor: Valor do código de barras recebido - Decimal(10) + V(99).
+- EmpresaOrgaoId: Codigo febraban do código de barras recebido.
+- NomeEmpresa: Nome da empresa referente ao código de barras recebido.
+
+
+**Usuário não Autorizado**
+```html
+StatusCode: 401 Unauthorized
+```
+
+**Empresa não autorizada para o Pdv**
+```html
+{
+  "sucesso": false,
+  "mensagem": "Não foi possível efetuar esta ação. Tente mais tarde.",
+  "totalDeRegistros": 0,
+  "mensagemErro": "O pdv informado não possui a empresa do código de barras autorizada. Favor procurar o suporte.",
+  "validadeToken": "Token expira em : 56 minutos e 0 segundos."
+}
+StatusCode: 400
+```
+
+**Código de Barras informado é inválido**
+```html
+{
+  "sucesso": false,
+  "mensagem": "Não foi possível efetuar esta ação. Tente mais tarde.",
+  "totalDeRegistros": 0,
+  "mensagemErro": "O código de barras informado é inválido. Favor verificar.",
+  "validadeToken": "Token expira em : 56 minutos e 0 segundos."
+}
+StatusCode: 400
+```
 
 
 # Envio de Arrecadação
