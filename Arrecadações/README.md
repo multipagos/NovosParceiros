@@ -87,7 +87,7 @@ StatusCode: 200
 - StatusArrecadacao: Código de status da arrecadação. Podendo ser:
   - Autorizada
   - Pagamento Concluído
-  - Empresa não Autorizada
+  - Não Autorizada - Empresa não Autorizada
   - Já Recebido
   - Sem valor
 - CodigoDeBarras: Código de Barras recebido.
@@ -105,10 +105,10 @@ StatusCode: 401 Unauthorized
 ```html
 {
   "sucesso": false,
-  "mensagem": "Não foi possível efetuar esta ação. Tente mais tarde.",
+  "mensagem": "Dados inválidos.",
   "totalDeRegistros": 0,
-  "mensagemErro": "O pdv informado não possui a empresa do código de barras autorizada. Favor procurar o suporte.",
-  "validadeToken": "Token expira em : 56 minutos e 0 segundos."
+  "mensagemErro": "Documento sem valor e o valor não foi informado",
+  "validadeToken": "Token expira em : 57 minutos e 59 segundos."
 }
 StatusCode: 400
 ```
@@ -117,10 +117,10 @@ StatusCode: 400
 ```html
 {
   "sucesso": false,
-  "mensagem": "Não foi possível efetuar esta ação. Tente mais tarde.",
+  "mensagem": "Dados inválidos.",
   "totalDeRegistros": 0,
-  "mensagemErro": "O código de barras informado é inválido. Favor verificar.",
-  "validadeToken": "Token expira em : 56 minutos e 0 segundos."
+  "mensagemErro": "Documento sem valor e o valor não foi informado",
+  "validadeToken": "Token expira em : 57 minutos e 30 segundos."
 }
 StatusCode: 400
 ```
