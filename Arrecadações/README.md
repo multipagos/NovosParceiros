@@ -45,7 +45,7 @@ Retorno em caso de falha:
 # Consulta Detalhes da Fatura
 Antes de realizar a venda em sua plataforma, caso deseje realizar uma consulta de informações da fatura, basta realizar a seguinte request:
 
-- POST /api/Multipagos/Arrecadacao
+- POST /api/pagamentos/SolicitaAutorizacao
 ```html
 {
     "CodigoInformado": "84800000000018601622022081514940937601021123",
@@ -56,7 +56,7 @@ Antes de realizar a venda em sua plataforma, caso deseje realizar uma consulta d
 *Não esqueça de enviar o token obtido na autenticação como 'Bearer Token'
 ```
 **Orientação dos campos:**
-- CodigoInformado: Código de Barras da fatura - Alfanumérico(44) - obrigatório
+- CodigoInformado: Código de Barras da fatura - Alfanumérico(44) - Obrigatório
 - Origem: Identificação da origem do recebimento dessa consulta. Favor informar fixo 30. - Obrigatório
 - Valor: Valor efetivamente recebido - Decimal(10) + V(99) - Não Obrigatório
 
