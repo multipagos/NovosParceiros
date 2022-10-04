@@ -86,10 +86,9 @@ StatusCode: 200
 **Orientação dos campos:**
 - StatusArrecadacao: Código de status da arrecadação. Podendo ser:
   - Autorizada
-  - Pagamento Concluído
   - Não Autorizada - Empresa não Autorizada
   - Já Recebido
-  - Sem valor
+  - Inválido
 - CodigoDeBarras: Código de Barras recebido.
 - Valor: Valor do código de barras recebido - Decimal(10) + V(99).
 - EmpresaOrgaoId: Codigo febraban do código de barras recebido.
@@ -125,6 +124,17 @@ StatusCode: 400
 StatusCode: 400
 ```
 
+**Código de Barras já recebido**
+```html
+{
+  "sucesso": false,
+  "mensagem": "Código de Barras já recebido",
+  "totalDeRegistros": 0,
+  "mensagemErro": "O código de barras recebido já se encontra pago.",
+  "validadeToken": "Token expira em : 57 minutos e 59 segundos."
+}
+StatusCode: 400
+```
 
 # Envio de Arrecadação
 Após a realização de uma venda em sua plataforma, envie as seguintes informações para que possamos processar e encaminhar ao Grupo Claro:
@@ -185,6 +195,7 @@ De acordo com as informações recebidas, durante as nossas validações, podemo
 ```html
 {
     "sucesso": true,
+	"dataPagamento": "2022-10-04T16:35:23",
     "mensagem": "Pagamento (Número do Código de Barras de 44 caracteres) recebido e processado com sucesso."
 }
 ```
