@@ -75,7 +75,8 @@ De acordo com as informações recebidas, durante as nossas validações, podemo
 		"valor": 1.86,
 		"empresaOrgaoId": "0162",
 		"dataVencimento": "2022-09-30T00:00:00",
-		"nomeEmpresa": "CLARO SP DDD 11"
+		"nomeEmpresa": "CLARO SP DDD 11",
+		"cnpjEmpresa": "40432544044608"
 	},
 	"totalDeRegistros": 1,
 	"mensagemErro": "",
