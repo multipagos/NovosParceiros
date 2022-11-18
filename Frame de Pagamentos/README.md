@@ -249,7 +249,7 @@ $.ajax({
 # **Dados de Teste**
 Para realizar testes de pagamento de faturas, usar os seguintes dados de cartão de crédito:
 ```
-Número cartão : 4000 0000 0000 0001
+Número cartão : 4000 0000 0001 0001
 CVV : 123
 Data : 12/24
 ```
