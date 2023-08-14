@@ -214,6 +214,20 @@ StatusCode: 400
 }
 StatusCode: 400
 ```
+
+**Nova Regra: Pagamento Parcelado apenas para convênio Claro Móvel**
+
+**Convênio não aceito para essa Forma de Pagamento**
+```
+{
+    "sucesso": false,
+    "mensagem": "Falha ao obter o frame de pagamentos.",
+    "totalDeRegistros": 1,
+    "mensagemErro": "Convênio não aceito para essa Forma de Pagamento",
+    "validadeToken": "Token expira em : 59 minutos e 1 segundos."
+}
+StatusCode: 400
+```
 # **Utilizando as informações para montar o frame**
 Após a execução do passo acima, será possível a renderização de um iframe autenticado em tela.
 Segue exemplo de como utilizar o frameLink e o frameToken:
