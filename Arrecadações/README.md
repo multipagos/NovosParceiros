@@ -45,7 +45,7 @@ Retorno em caso de falha:
 # Consulta Detalhes da Fatura
 Antes de realizar a venda em sua plataforma, caso deseje realizar uma consulta de informações da fatura, basta realizar a seguinte request:
 
-- POST /api/pagamentos/SolicitaAutorizacao
+- POST /api/v2/Pagamento/VerificarAutorizacao
 ```html
 {
     "CodigoInformado": "84800000000018601622022081514940937601021123",
@@ -69,7 +69,7 @@ De acordo com as informações recebidas, durante as nossas validações, podemo
 {
     "sucesso": true,
     "mensagem": "Autorização efetuada com sucesso.",
-	"data": {
+	"dados": {
 		"statusArrecadacao" : "Autorizada",
 		"codigoDeBarras": "84800000000018601622022081514940937601021123",
 		"valor": 1.86,
