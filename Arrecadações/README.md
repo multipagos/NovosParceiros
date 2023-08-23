@@ -96,7 +96,7 @@ StatusCode: 200
 - NomeEmpresa: Nome da empresa referente ao código de barras recebido.
 
 
-**Usuário não Autorizado**
+**Token inválido**
 ```html
 StatusCode: 401 Unauthorized
 ```
@@ -105,9 +105,8 @@ StatusCode: 401 Unauthorized
 ```html
 {
   "sucesso": false,
-  "mensagem": "Dados inválidos.",
+  "mensagem": "O pdv informado não possui a empresa do código de barras autorizada. Favor procurar o suporte.",
   "totalDeRegistros": 0,
-  "mensagemErro": "Documento sem valor e o valor não foi informado",
   "validadeToken": "Token expira em : 57 minutos e 59 segundos."
 }
 StatusCode: 400
@@ -116,10 +115,10 @@ StatusCode: 400
 **Código de Barras informado é inválido**
 ```html
 {
+  "dados": null,
   "sucesso": false,
-  "mensagem": "Dados inválidos.",
+  "mensagem": "O código de barras informado é inválido. Favor verificar.",
   "totalDeRegistros": 0,
-  "mensagemErro": "Documento sem valor e o valor não foi informado",
   "validadeToken": "Token expira em : 57 minutos e 30 segundos."
 }
 StatusCode: 400
@@ -128,10 +127,10 @@ StatusCode: 400
 **Código de Barras já recebido**
 ```html
 {
+  "dados": null,
   "sucesso": false,
-  "mensagem": "Código de Barras já recebido",
+  "mensagem": "Já foi realizado o pagamento dessa conta.",
   "totalDeRegistros": 0,
-  "mensagemErro": "O código de barras recebido já se encontra pago.",
   "validadeToken": "Token expira em : 57 minutos e 59 segundos."
 }
 StatusCode: 400
