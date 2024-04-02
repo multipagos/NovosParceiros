@@ -58,8 +58,8 @@ Seguem detalhes sobre os campos que precisam ser enviados.
 			"IdentificacaoClienteEmpresa": "00000001008",
 			"AgenciaDebito": "001",
 			"IdentificacaoClienteBanco": "00000001123",
-			"DataOperacao": "2022-02-04",
-			"CodigoMovimento": "1"
+			"DataOperacao": "2024-02-04",
+			"CodigoMovimento": "2"
 		},
 		{
 			"CodigoRegistro": "F",
@@ -67,7 +67,7 @@ Seguem detalhes sobre os campos que precisam ser enviados.
 			"AgenciaDebito": "001",
 			"IdentificacaoClienteBanco": "00000001444",
 			"UsoEmpresa": "",
-			"DataDebito": "2022-02-04",
+			"DataDebito": "2024-02-04",
 			"ValorDebito": 125.99,
 			"StatusRetorno": "00",
 			"CodigoMovimento": "1"
@@ -243,8 +243,8 @@ _No exemplo abaixo, o campo "token" é o campo que precisaria ser indicado em "c
 - POST /api/v1/DebitoAutomatico/Retorno
 ```html
 {
-	"TotalDeRegistros": 8,
-	"ValorTotalRegistros": 0,
+	"TotalDeRegistros": 13,
+	"ValorTotalRegistros": 70.17,
 	"CodigoConvenio": "CLAROMOVEL",
 	"Nsa": 1,
 	"Detalhes":
@@ -254,64 +254,112 @@ _No exemplo abaixo, o campo "token" é o campo que precisaria ser indicado em "c
 			"IdentificacaoClienteEmpresa": "00000001008",
 			"AgenciaDebito": "001",
 			"IdentificacaoClienteBanco": "00000001123",
-			"DataOperacao": "2022-02-04T12:01:02",
-			"CodigoMovimento": "1"
+			"DataOperacao": "2024-02-04T12:01:02",
+			"CodigoMovimento": "2"
 		},
 		{
 			"CodigoRegistro": "B",
 			"IdentificacaoClienteEmpresa": "00000001001",
 			"AgenciaDebito": "001",
 			"IdentificacaoClienteBanco": "00000001456",
-			"DataOperacao": "2022-02-04T12:01:04",
-			"CodigoMovimento": "1"
+			"DataOperacao": "2024-02-04T12:01:04",
+			"CodigoMovimento": "2"
 		},
 		{
 			"CodigoRegistro": "B",
 			"IdentificacaoClienteEmpresa": "00000001002",
 			"AgenciaDebito": "001",
 			"IdentificacaoClienteBanco": "00000001789",
-			"DataOperacao": "2022-02-04T12:01:06",
-			"CodigoMovimento": "1"
+			"DataOperacao": "2024-02-04T12:01:06",
+			"CodigoMovimento": "2"
 		},
 		{
 			"CodigoRegistro": "B",
 			"IdentificacaoClienteEmpresa": "00000001003",
 			"AgenciaDebito": "001",
 			"IdentificacaoClienteBanco": "00000001135",
-			"DataOperacao": "2022-02-04T12:01:08",
-			"CodigoMovimento": "1"
+			"DataOperacao": "2024-02-04T12:01:08",
+			"CodigoMovimento": "2"
 		},
 		{
 			"CodigoRegistro": "B",
 			"IdentificacaoClienteEmpresa": "00000001004",
 			"AgenciaDebito": "001",
 			"IdentificacaoClienteBanco": "00000001246",
-			"DataOperacao": "2022-02-04T12:02:00",
-			"CodigoMovimento": "1"
+			"DataOperacao": "2024-02-04T12:02:00",
+			"CodigoMovimento": "2"
 		},
 		{
 			"CodigoRegistro": "B",
 			"IdentificacaoClienteEmpresa": "00000001005",
 			"AgenciaDebito": "001",
 			"IdentificacaoClienteBanco": "00000001357",
-			"DataOperacao": "2022-02-04T12:02:02",
-			"CodigoMovimento": "1"
+			"DataOperacao": "2024-02-04T12:02:02",
+			"CodigoMovimento": "2"
 		},
 		{
 			"CodigoRegistro": "B",
 			"IdentificacaoClienteEmpresa": "00000001006",
 			"AgenciaDebito": "001",
 			"IdentificacaoClienteBanco": "00000001468",
-			"DataOperacao": "2022-02-04T12:02:04",
-			"CodigoMovimento": "1"
+			"DataOperacao": "2024-02-04T12:02:04",
+			"CodigoMovimento": "2"
 		},
 		{
 			"CodigoRegistro": "B",
 			"IdentificacaoClienteEmpresa": "00000001007",
 			"AgenciaDebito": "001",
 			"IdentificacaoClienteBanco": "00000001579",
-			"DataOperacao": "2022-02-04T12:02:06",
-			"CodigoMovimento": "1"
+			"DataOperacao": "2024-02-04T12:02:06",
+			"CodigoMovimento": "2"
+		},
+		{
+		      "codigoRegistro": "B",
+		      "identificacaoClienteEmpresa": "131747605",
+		      "agenciaDebito": "0001",
+		      "identificacaoClienteBanco": "3773578",
+		      "dataOperacao": "2024-01-17",
+		      "codigoMovimento": "1",      
+		},
+		{
+			"codigoRegistro": "F",
+			"identificacaoClienteEmpresa": "151442819",
+			"agenciaDebito": "0001",
+			"identificacaoClienteBanco": "2264814",
+			"codigoMovimento": "0",
+			"valorDebito": 70.17,
+			"usoEmpresa": "476159493",      
+			"dataDebito": "2023-02-09T00:00:00",
+			"statusRetorno": "00"	            
+		},
+		{      
+		      "codigoRegistro": "F",
+		      "identificacaoClienteEmpresa": "124430600",
+		      "agenciaDebito": "0001",
+		      "identificacaoClienteBanco": "82860",
+		      "codigoMovimento": "0",
+		      "valorDebito": 0.0,
+		      "usoEmpresa": "476090623",      
+		      "dataDebito": "2024-01-25T00:00:00",
+		      "statusRetorno": "01"		
+		},
+		{
+			"CodigoRegistro": "H",
+			"IdentificacaoClienteEmpresa": "00000000010",
+			"AgenciaDebito": "122",
+			"IdentificacaoClienteBanco": "00000001555",
+			"IdentificacaoClienteNovo": "00000001478",
+			"Ocorrencia": "Descrição da rejeição",
+			"CodigoMovimento": "1"		  
+		},
+		{
+			"CodigoRegistro": "H",
+			"IdentificacaoClienteEmpresa": "00000000010",
+			"AgenciaDebito": "122",
+			"IdentificacaoClienteBanco": "00000001555",
+			"IdentificacaoClienteNovo": "00000001480",
+			"Ocorrencia": "Descrição",
+			"CodigoMovimento": "0"
 		}
 	]
 }
@@ -340,55 +388,55 @@ _No exemplo abaixo, o campo "token" é o campo que precisaria ser indicado em "c
 			"IdentificacaoClienteEmpresa": "00000001004",
 			"AgenciaDebito": "001",
 			"IdentificacaoClienteBanco": "00000001246",   
-			"DataVencimento": "2022-02-09",
+			"DataVencimento": "2024-02-09",
 			"ValorDebito": 30.50,
 			"CodigoMoeda": "BRL",
 			"UsoEmpresa": "",
-			"CodigoMovimento": "1"
+			"CodigoMovimento": "0"
 		},
 		{
 			"CodigoRegistro": "E",
 			"IdentificacaoClienteEmpresa": "00000001007",
 			"AgenciaDebito": "001",
 			"IdentificacaoClienteBanco": "00000001579",   
-			"DataVencimento": "2022-02-09",
+			"DataVencimento": "2024-02-09",
 			"ValorDebito": 99.99,
 			"CodigoMoeda": "BRL",
 			"UsoEmpresa": "",
-			"CodigoMovimento": "1"
+			"CodigoMovimento": "0"
 		},
 		{
 			"CodigoRegistro": "E",
 			"IdentificacaoClienteEmpresa": "00000001006",
 			"AgenciaDebito": "001",
 			"IdentificacaoClienteBanco": "00000001468",   
-			"DataVencimento": "2022-02-09",
+			"DataVencimento": "2024-02-09",
 			"ValorDebito": 49,54,
 			"CodigoMoeda": "BRL",
 			"UsoEmpresa": "",
-			"CodigoMovimento": "1"
+			"CodigoMovimento": "0"
 		},
 		{
 			"CodigoRegistro": "E",
 			"IdentificacaoClienteEmpresa": "00000001001",
 			"AgenciaDebito": "001",
 			"IdentificacaoClienteBanco": "00000001456",   
-			"DataVencimento": "2022-02-09",
+			"DataVencimento": "2024-02-09",
 			"ValorDebito": 234.89,
 			"CodigoMoeda": "BRL",
 			"UsoEmpresa": "",
-			"CodigoMovimento": "1"
+			"CodigoMovimento": "0"
 		},
 		{
 			"CodigoRegistro": "E",
 			"IdentificacaoClienteEmpresa": "00000001004",
 			"AgenciaDebito": "001",
 			"IdentificacaoClienteBanco": "00000001246",   
-			"DataVencimento": "2022-02-09",
+			"DataVencimento": "2024-02-09",
 			"ValorDebito": 370.11,
 			"CodigoMoeda": "BRL",
 			"UsoEmpresa": "",
-			"CodigoMovimento": "1"
+			"CodigoMovimento": "0"
 		},
 		{
 			"CodigoRegistro": "D",
@@ -407,8 +455,72 @@ _No exemplo abaixo, o campo "token" é o campo que precisaria ser indicado em "c
 			"Ocorrencia": "Motivo ocorrência",
 			"Ocorrencia2": "Motivo ocorrência 2",
 			"CodigoMovimento": "1"
+		},
+		{
+			"codigoRegistro": "E",
+			"identificacaoClienteEmpresa": "151442819",
+			"agenciaDebito": "0001",
+			"identificacaoClienteBanco": "2264814",
+			"codigoMovimento": "0",      
+			"dataVencimento": "2024-01-27T00:00:00",
+			"valorDebito": 70.17,
+			"usoEmpresa": "476159493",     
+		},
+		{
+			"codigoRegistro": "E",
+			"identificacaoClienteEmpresa": "124430600",
+			"agenciaDebito": "0001",
+			"identificacaoClienteBanco": "82860",      
+			"codigoMovimento": "0",            
+			"dataVencimento": "2024-01-19T00:00:00",
+			"valorDebito": 53.96,
+			"usoEmpresa": "476090623"		      
+		 },   
+		 {
+			"CodigoRegistro": "E",
+			"IdentificacaoClienteEmpresa": "131747605",
+			"AgenciaDebito": "001",
+			"IdentificacaoClienteBanco": "3773578",   
+			"DataVencimento": "2024-01-19",
+			"ValorDebito": 30.50,			
+			"UsoEmpresa": "476090624",
+			"CodigoMovimento": "1"
+		},
+		{
+			"codigoRegistro": "D",
+			"identificacaoClienteEmpresa": "124252050",
+			"agenciaDebito": "0001",
+			"identificacaoClienteBanco": "79599",      
+			"codigoMovimento": "1",
+			"Ocorrencia": "Exclusao - transferido para debito em outro banco",
+			"identificacaoClienteNovo": "124252050"
+		},   
+		{
+			"codigoRegistro": "D",
+			"identificacaoClienteEmpresa": "149399937",
+			"agenciaDebito": "0001",
+			"identificacaoClienteBanco": "86386",      
+			"codigoMovimento": "1",
+			"Ocorrencia": "Exclusao - transferido para debito em outro banco",
+			"identificacaoClienteNovo": "149399937"
+		},
+		{
+			"codigoRegistro": "C",
+			"identificacaoClienteEmpresa": "2030765888",
+			"agenciaDebito": "0001",
+			"identificacaoClienteBanco": "86023",      
+			"codigoMovimento": "2",
+			"Ocorrencia": "CONTA CLE NAO ENCONTRADA NA BASE" 
+		},
+		{
+			"codigoRegistro": "C",
+			"identificacaoClienteEmpresa": "2030765888",
+			"agenciaDebito": "0001",
+			"identificacaoClienteBanco": "86023",      
+			"codigoMovimento": "2",
+			"Ocorrencia": "CONTA CLE NAO ENCONTRADA NA BASE"
 		}
 	]
 }
 ```
-**Agendamos uma rotina para realizar a RemessaFake para o WebHook de 1 em 1 hora.**
+**Agendamos uma rotina para realizar a RemessaFake para o WebHook sob demanda.**
