@@ -51,16 +51,16 @@ Seguem detalhes sobre os campos que precisam ser enviados.
 
 ```html
 {
-	"FormaPagamento": 1,
-	"TipoTransacao": 12,
-	"Origem": 60,
-	"NomeCliente": "Nome do Cliente",
-	"Arrecadacoes": [
-		{
-		  "CodigoInformado": "84670000002203602962021102518700000987654321",
-		  "Valor": 220.36
-		}
-	],
+  "FormaPagamento": 1,
+  "TipoTransacao": 12,
+  "Origem": 60,
+  "NomeCliente": "Nome do Cliente",
+  "Arrecadacoes": [
+    {
+    "CodigoInformado": "84670000002203602962021102518700000987654321",
+    "Valor": 220.36
+    }
+  ],
   "parcelas": [
     {
       "numParcela": 1,
@@ -83,7 +83,7 @@ Seguem detalhes sobre os campos que precisam ser enviados.
   ]
 }
 
-*Todos os campos são obrigatórios com exceção do campo "taxaFiza" dentro de "parcelas".
+*Todos os campos são obrigatórios com exceção do campo "taxaFixa" dentro de "parcelas".
 **Números e informações do exemplo são fictícias.
 ***Não esqueça de enviar o token obtido na autenticação como 'Bearer Token'
 ```
