@@ -235,7 +235,7 @@ $.ajax({
 });
 ```
 
-- **Para mais detalhes vide arquivo de exemplo adicionado nesse artigo: [ExemploNavegadorAuthHeader.html](https://github.com/multipagos/NovosParceiros/blob/main/Frame%20de%20Pagamentos/ExemploNavegadorAuthHeader.html)**
+- **Para mais detalhes vide arquivo de exemplo adicionado nesse artigo: [ExemploNavegadorAuthHeader.html](https://github.com/multipagos/NovosParceiros/blob/main/Frame%20de%20Pagamentos/Frame%20Especial/ExemploNavegadorAuthHeader.html)**
 
 
 # **Dados de Teste**
