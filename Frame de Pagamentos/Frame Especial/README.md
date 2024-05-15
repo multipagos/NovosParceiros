@@ -57,10 +57,27 @@ Seguem detalhes sobre os campos que precisam ser enviados.
   "NomeCliente": "Nome do Cliente",
   "Arrecadacoes": [
     {
-    "CodigoInformado": "84670000002203602962021102518700000987654321",
-    "Valor": 220.36
+       "CodigoInformado": "84670000002203602962021102518700000987654321",
+       "Valor": 220.36
     }
   ],
+  "DetalhesCliente": {
+      "NomeCliente": "José Tadeu Bijus",
+      "UnidadeConsumidora": "123456789",
+      "Cpf": "01234567890",
+      "Telefone": "21987654321",
+      "Email": "emaildocliente@teste.com",
+      "DataNascimento": "2000-01-01,
+      "Endereco": {
+         "Logradouro": "R. Alexandre Mackenzie",
+         "Numero": "75",
+         "Complemento": "7º andar",
+         "Cidade": "Rio de Janeiro",
+         "Uf": "RJ",
+         "Cep": "20221410",
+         "Pais": "BR"
+      }
+   },
   "parcelas": [
     {
       "numParcela": 1,
@@ -95,6 +112,21 @@ Seguem detalhes sobre os campos que precisam ser enviados.
 - Arrecadacoes - Lista de documentos de arrecadação.
 	- CodigoInformado - Código de barras. Pode ser tanto 44 ou 48 caracteres.
 	- Valor - Valor da fatura.
+- DetalhesCliente - Informações sobre o cliente
+	- NomeCliente - Nome completo do cliente
+	- UnidadeConsumidora - Unidade Consumidora 
+	- Cpf - Cadastro de Pessoa Física
+	- Telefone - Número de telefone com DDD. Ex: (99) 99999-9999
+	- Email - Endereço eletrônico do cliente
+	- DataNascimento - Data de Nascimento do Cliente
+	- Endereco - Endereço do cliente titular da(s) fatura(s).
+		- Logradouro - Logradouro do endereço do cliente
+		- Numero - Número do endereço do cliente
+		- Complemento - Complemento do endereço do endereço do cliente
+		- Cidade - Cidade do endereço do cliente
+		- Uf - Unidade Federativa do endereço do cliente
+		- Cep - Código de Endereçamento Postal do endereço do cliente
+		- Pais - País do endereço do cliente
 - Parcelas – Lista de parcelas do pagamento
   - numParcela – Número da Parcela
   - desParcela – Descrição da Parcela
@@ -258,8 +290,7 @@ Para isso, após autenticado com sucesso pela API de geração de Token, realize
   "tipoAutenticacao": 1,
   "objetoAutenticacao": "{'user': 'nossoUsuarioDeAutenticacao','password': 'nossaSenhaDeAutenticacao'}",
   "urlAutenticacao": "https://SuaUrlAqui.com.br/api/Login/Token",
-  "campoToken": "token", 
-  "idExterno": "bancox1234" 
+  "campoToken": "token"
 }
 ```
 
@@ -305,10 +336,14 @@ _No exemplo abaixo, o campo "token" é o campo que precisaria ser indicado em "c
 {
   "sucesso": true,
   "mensagem": "Assinatura realizada com sucesso.",
-  "validadeToken": "Token expira em : 55 minutos e 36 segundos."
+  "validadeToken": "Token expira em : 59 minutos e 18 segundos.",
+  "id_Externo": "I1NiIsInR5cCI6IkpXVCJ9"
 }
 StatusCode: 200
+
 ```
+- id_Externo - Identificação gerada para a sua assinatura
+
 **Resultado com falha:**
 ```
 {
@@ -419,3 +454,5 @@ Content-Type: application/json
 	- transactionId - Numero da transação na Adquirente
 	- responseCode - Código de Resposta da Adquirente (verificar o manual do adquirente)
 	- responseDescription - Descrição da Resposta da Adquirente (verificar o manual do adquirente)
+
+
