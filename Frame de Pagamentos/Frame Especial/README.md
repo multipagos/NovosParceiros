@@ -54,7 +54,6 @@ Seguem detalhes sobre os campos que precisam ser enviados.
   "FormaPagamento": 1,
   "TipoTransacao": 12,
   "Origem": 60,
-  "NomeCliente": "Nome do Cliente",
   "Arrecadacoes": [
     {
        "CodigoInformado": "84670000002203602962021102518700000987654321",
@@ -116,7 +115,7 @@ Seguem detalhes sobre os campos que precisam ser enviados.
 	- NomeCliente - Nome completo do cliente
 	- UnidadeConsumidora - Unidade Consumidora 
 	- Cpf - Cadastro de Pessoa Física
-	- Telefone - Número de telefone com DDD. Ex: (99) 99999-9999
+	- Telefone - Número de telefone com DDD. Ex: 99999999999
 	- Email - Endereço eletrônico do cliente
 	- DataNascimento - Data de Nascimento do Cliente
 	- Endereco - Endereço do cliente titular da(s) fatura(s).
