@@ -51,7 +51,7 @@ Seguem detalhes sobre os campos que precisam ser enviados.
 
 ```html
 {
-	"FormaPagamento": 1,
+	"FormaPagamento": 4,
 	"TipoTransacao": 12,
 	"Origem": 60,
 	"NomeCliente": "Nome do Cliente",
