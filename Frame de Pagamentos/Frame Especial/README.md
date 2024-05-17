@@ -289,7 +289,8 @@ Para isso, após autenticado com sucesso pela API de geração de Token, realize
   "tipoAutenticacao": 1,
   "objetoAutenticacao": "{'user': 'nossoUsuarioDeAutenticacao','password': 'nossaSenhaDeAutenticacao'}",
   "urlAutenticacao": "https://SuaUrlAqui.com.br/api/Login/Token",
-  "campoToken": "token"
+  "campoToken": "token",
+  "id_Externo": "I1NiIsInR5cCI6IkpXVCJ9"
 }
 ```
 
@@ -342,7 +343,6 @@ _No exemplo abaixo, o campo "token" é o campo que precisaria ser indicado em "c
 StatusCode: 200
 
 ```
-- id_Externo - Identificação gerada para a sua assinatura
 
 **Resultado com falha:**
 ```
