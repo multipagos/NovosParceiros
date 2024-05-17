@@ -329,7 +329,7 @@ _No exemplo abaixo, o campo "token" é o campo que precisaria ser indicado em "c
   "mensagem": "Assinatura realizada com sucesso.",
   "validadeToken": "Token expira em : 59 minutos e 18 segundos.",
   "id_Externo": "I1NiIsInR5cCI6IkpXVCJ9",
-  "Id": 123
+  "id": 123
 }
 StatusCode: 200
 ```

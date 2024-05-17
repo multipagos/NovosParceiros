@@ -290,7 +290,7 @@ Para isso, após autenticado com sucesso pela API de geração de Token, realize
   "objetoAutenticacao": "{'user': 'nossoUsuarioDeAutenticacao','password': 'nossaSenhaDeAutenticacao'}",
   "urlAutenticacao": "https://SuaUrlAqui.com.br/api/Login/Token",
   "campoToken": "token",
-  "id_Externo": "I1NiIsInR5cCI6IkpXVCJ9"
+  "idExterno": "I1NiIsInR5cCI6IkpXVCJ9"
 }
 ```
 
@@ -338,7 +338,7 @@ _No exemplo abaixo, o campo "token" é o campo que precisaria ser indicado em "c
   "mensagem": "Assinatura realizada com sucesso.",
   "validadeToken": "Token expira em : 59 minutos e 18 segundos.",
   "id_Externo": "I1NiIsInR5cCI6IkpXVCJ9",
-  "Id": 123
+  "id": 123
 }
 StatusCode: 200
 
