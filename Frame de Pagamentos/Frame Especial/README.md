@@ -336,7 +336,8 @@ _No exemplo abaixo, o campo "token" é o campo que precisaria ser indicado em "c
   "sucesso": true,
   "mensagem": "Assinatura realizada com sucesso.",
   "validadeToken": "Token expira em : 59 minutos e 18 segundos.",
-  "id_Externo": "I1NiIsInR5cCI6IkpXVCJ9"
+  "id_Externo": "I1NiIsInR5cCI6IkpXVCJ9",
+  "Id": 123
 }
 StatusCode: 200
 
@@ -455,3 +456,27 @@ Content-Type: application/json
 	- responseDescription - Descrição da Resposta da Adquirente (verificar o manual do adquirente)
 
 
+# **Descadastramento de WebHook**
+Caso deseje descadastrar sua assinatura de Webhook em nosso sistema para não mais receber mensagens de webhooks, você poderá descadastrar seguinte os seguintes passos: 
+- PUT /api/v1/WebHook/DescadastrarWebhook/{id}
+
+**Orientação dos campos:**
+- id - Identificação gerada para a sua assinatura recebido no cadastramento.
+
+**Resultado com sucesso:**
+```
+{
+  "sucesso": true,
+  "mensagem": "Assinatura Descadastrada com sucesso.",
+  "validadeToken": "Token expira em : 59 minutos e 37 segundos."
+}
+```
+
+**Resultado com falha:**
+```
+{
+  "sucesso": false,
+  "mensagem": "Não foi possível realizar o descadastramento. Tente novamente mais tarde.",
+  "validadeToken": "Token expira em : 59 minutos e 37 segundos."
+}
+```

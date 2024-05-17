@@ -81,7 +81,7 @@ Seguem detalhes sobre os campos que precisam ser enviados.
 ```
 
 **Orientação dos campos:**
-- FormaPagamento - Identificador da Forma de Pagamento. Usar 1 (Terminal Digital/Eletrônico).
+- FormaPagamento - Identificador da Forma de Pagamento. Usar 4 (Pagamento em Cartão de Crédito).
 - TipoTransacao - Identificador do Tipo de Transacação. Usar 12 (Cartão de Crédito Parcelado pela Administradora).
 - Origem - Identificador da origem da transação. Usar 60 (Claro / Hub)
 - NomeCliente - Nome do cliente titular da(s) fatura(s).
@@ -281,7 +281,7 @@ Para isso, após autenticado com sucesso pela API de geração de Token, realize
   "objetoAutenticacao": "{'user': 'nossoUsuarioDeAutenticacao','password': 'nossaSenhaDeAutenticacao'}",
   "urlAutenticacao": "https://SuaUrlAqui.com.br/api/Login/Token",
   "campoToken": "token", 
-  "idExterno": "bancox1234" 
+  "idExterno": "I1NiIsInR5cCI6IkpXVCJ9" 
 }
 ```
 
@@ -327,7 +327,9 @@ _No exemplo abaixo, o campo "token" é o campo que precisaria ser indicado em "c
 {
   "sucesso": true,
   "mensagem": "Assinatura realizada com sucesso.",
-  "validadeToken": "Token expira em : 55 minutos e 36 segundos."
+  "validadeToken": "Token expira em : 59 minutos e 18 segundos.",
+  "id_Externo": "I1NiIsInR5cCI6IkpXVCJ9",
+  "Id": 123
 }
 StatusCode: 200
 ```
@@ -441,3 +443,28 @@ Content-Type: application/json
 	- transactionId - Numero da transação na Adquirente
 	- responseCode - Código de Resposta da Adquirente (verificar o manual do adquirente)
 	- responseDescription - Descrição da Resposta da Adquirente (verificar o manual do adquirente)
+
+# **Descadastramento de WebHook**
+Caso deseje descadastrar sua assinatura de Webhook em nosso sistema para não mais receber mensagens de webhooks, você poderá descadastrar seguinte os seguintes passos: 
+- PUT /api/v1/WebHook/DescadastrarWebhook/{id}
+
+**Orientação dos campos:**
+- id - Identificação gerada para a sua assinatura recebido no cadastramento.
+
+**Resultado com sucesso:**
+```
+{
+  "sucesso": true,
+  "mensagem": "Assinatura Descadastrada com sucesso.",
+  "validadeToken": "Token expira em : 59 minutos e 37 segundos."
+}
+```
+
+**Resultado com falha:**
+```
+{
+  "sucesso": false,
+  "mensagem": "Não foi possível realizar o descadastramento. Tente novamente mais tarde.",
+  "validadeToken": "Token expira em : 59 minutos e 37 segundos."
+}
+```
