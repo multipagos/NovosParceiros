@@ -86,15 +86,6 @@ Seguem detalhes sobre os campos que precisam ser enviados.
       "valorJuros": 4.5,
       "valorTotal": 54.50,
       "taxaFixa":0
-    },
-    {
-      "numParcela": 2,
-      "desParcela":"2x",
-      "taxa": 1.21,
-      "valor": 50,
-      "valorJuros": 5.5,
-      "valorTotal": 55.50,
-      "taxaFixa":0
     }
   ]
 }
