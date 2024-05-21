@@ -51,7 +51,7 @@ Seguem detalhes sobre os campos que precisam ser enviados.
 
 ```html
 {
-  "FormaPagamento": 1,
+  "FormaPagamento": 4,
   "TipoTransacao": 12,
   "Origem": 60,
   "Arrecadacoes": [
@@ -66,7 +66,7 @@ Seguem detalhes sobre os campos que precisam ser enviados.
       "Cpf": "01234567890",
       "Telefone": "21987654321",
       "Email": "emaildocliente@teste.com",
-      "DataNascimento": "2000-01-01,
+      "DataNascimento": "2000-01-01",
       "Endereco": {
          "Logradouro": "R. Alexandre Mackenzie",
          "Numero": "75",
@@ -105,7 +105,7 @@ Seguem detalhes sobre os campos que precisam ser enviados.
 ```
 
 **Orientação dos campos:**
-- FormaPagamento - Identificador da Forma de Pagamento. Usar 1 (Terminal Digital/Eletrônico).
+- FormaPagamento - Identificador da Forma de Pagamento. Usar 4 (Pagamento em Cartão de Crédito).
 - TipoTransacao - Identificador do Tipo de Transacação. Usar 12 (Cartão de Crédito Parcelado pela Administradora).
 - Origem - Identificador da origem da transação. Usar 60 E-Commercer
 - Arrecadacoes - Lista de documentos de arrecadação.
@@ -272,9 +272,9 @@ $.ajax({
 # **Dados de Teste**
 Para realizar testes de pagamento de faturas, usar os seguintes dados de cartão de crédito:
 ```
-Número cartão : 4000 0000 0001 0001
-CVV : 123
-Data : 12/24
+Número cartão : 4024 0071 5562 2151
+CVV : 197
+Data : 08/25
 ```
 
 # **Término do Fluxo: Recebimento de Informações de pagamento via WebHook Multicom**
@@ -290,7 +290,7 @@ Para isso, após autenticado com sucesso pela API de geração de Token, realize
   "objetoAutenticacao": "{'user': 'nossoUsuarioDeAutenticacao','password': 'nossaSenhaDeAutenticacao'}",
   "urlAutenticacao": "https://SuaUrlAqui.com.br/api/Login/Token",
   "campoToken": "token",
-  "idExterno": "I1NiIsInR5cCI6IkpXVCJ9"
+  "idExterno": "ChaveCombinada"
 }
 ```
 
@@ -364,7 +364,7 @@ Content-Type: application/json
 {
   "data": {
     "sucess": true,
-    "service": "Ecommerce-S3",
+    "service": "ChaveCombinada",
     "statusCode": "3",
     "statusMessage": "AUTHORIZED",
     "transactionId": "100-022-2022062-00_15-162429362",
