@@ -51,7 +51,7 @@ Seguem detalhes sobre os campos que precisam ser enviados.
 
 ```html
 {
-	"FormaPagamento": 4,
+	"FormaPagamento": 1,
 	"TipoTransacao": 12,
 	"Origem": 60,
 	"NomeCliente": "Nome do Cliente",
@@ -81,7 +81,7 @@ Seguem detalhes sobre os campos que precisam ser enviados.
 ```
 
 **Orientação dos campos:**
-- FormaPagamento - Identificador da Forma de Pagamento. Usar 4 (Pagamento em Cartão de Crédito).
+- FormaPagamento - Identificador da Forma de Pagamento. Usar 1 (Terminal Digital/Eletrônico).
 - TipoTransacao - Identificador do Tipo de Transacação. Usar 12 (Cartão de Crédito Parcelado pela Administradora).
 - Origem - Identificador da origem da transação. Usar 60 (Claro / Hub)
 - NomeCliente - Nome do cliente titular da(s) fatura(s).

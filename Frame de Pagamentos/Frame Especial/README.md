@@ -57,12 +57,13 @@ Seguem detalhes sobre os campos que precisam ser enviados.
   "Arrecadacoes": [
     {
        "CodigoInformado": "84670000002203602962021102518700000987654321",
-       "Valor": 220.36
+       "Valor": 220.36,
+	     "Adimplente": true 
     }
   ],
   "DetalhesCliente": {
       "NomeCliente": "José Tadeu Bijus",
-      "UnidadeConsumidora": "123456789",
+      "CodigoCliente": "123456789",
       "Cpf": "01234567890",
       "Telefone": "21987654321",
       "Email": "emaildocliente@teste.com",
@@ -82,7 +83,7 @@ Seguem detalhes sobre os campos que precisam ser enviados.
       "numParcela": 1,
       "desParcela":"1x",
       "taxa": 1.11,
-      "valor": 50,
+      "valor": 50.12,
       "valorJuros": 4.5,
       "valorTotal": 54.50,
       "taxaFixa":0
@@ -102,9 +103,10 @@ Seguem detalhes sobre os campos que precisam ser enviados.
 - Arrecadacoes - Lista de documentos de arrecadação.
 	- CodigoInformado - Código de barras. Pode ser tanto 44 ou 48 caracteres.
 	- Valor - Valor da fatura.
+  - Adimplente - Indicação se o cliente é adimplente ou não. Podendo ser true ou false.
 - DetalhesCliente - Informações sobre o cliente
 	- NomeCliente - Nome completo do cliente
-	- UnidadeConsumidora - Unidade Consumidora 
+	- CodigoCliente - Unidade Consumidora ou Identificação do Cliente
 	- Cpf - Cadastro de Pessoa Física
 	- Telefone - Número de telefone com DDD. Ex: 99999999999
 	- Email - Endereço eletrônico do cliente
@@ -356,12 +358,12 @@ Content-Type: application/json
   "data": {
     "sucess": true,
     "service": "ChaveCombinada",
-    "statusCode": "3",
-    "statusMessage": "AUTHORIZED",
+    "statusCode": "8",
+    "statusMessage": "CAPTURED",
     "transactionId": "100-022-2022062-00_15-162429362",
     "flag": "visa",
     "card": "481716-0881",
-    "value": 6989,
+    "value": 69.89,
     "numberInstallments": 2,
     "orderId": "LTYz0DA5MzQ3Mwaa",
     "orderDate": "2022-03-03T16:24:29.3628480-03:00",
@@ -370,8 +372,8 @@ Content-Type: application/json
       "authorizationCode": "670763",
       "acquiratorCode": "1",
       "transactionId": "0303042431832",
-      "responseCode": "4",
-      "responseDescription": "APPROVED"
+      "responseCode": "6",
+      "responseDescription": "CAPTURED"
     }
   }
 }
@@ -389,7 +391,7 @@ Content-Type: application/json
     "transactionId": "100-022-2022062-65410-153728675",
     "flag": "visa",
     "card": "481716-0881",
-    "value": 6989,
+    "value": 69.89,
     "numberInstallments": 2,
     "orderId": "LTYz0DA5MzQ3Mwaa",
     "orderDate": "2022-03-03T15:37:28.6770000",
