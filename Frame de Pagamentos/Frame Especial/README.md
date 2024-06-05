@@ -80,13 +80,13 @@ Seguem detalhes sobre os campos que precisam ser enviados.
    },
   "parcelas": [
     {
-      "numParcela": 1,
-      "desParcela":"1x",
+      "numParcela": 5,
+      "desParcela":"5x",
       "taxa": 1.11,
-      "valor": 50.12,
-      "valorJuros": 4.5,
-      "valorTotal": 54.50,
-      "taxaFixa":0
+      "valor": 220.36,
+      "valorJuros": 24.24,
+      "taxaFixa": 2.00,
+      "valorTotal": 246.60
     }
   ]
 }
@@ -120,13 +120,13 @@ Seguem detalhes sobre os campos que precisam ser enviados.
 		- Cep - Código de Endereçamento Postal do endereço do cliente
 		- Pais - País do endereço do cliente
 - Parcelas – Lista de parcelas do pagamento
-  - numParcela – Número da Parcela
-  - desParcela – Descrição da Parcela
-  - Taxa – Taxa de Juros da Parcela
-  - Valor – Valor da Parcela
-  - ValorJuros – Valor do Juros da Parcela
-  - Valor Total – Valor Total da Parcela 
-  - Taxa Fixa – Valor Taxa Fixa (Não Obrigatório)
+  - numParcela – Número da Parcela - Inteiro
+  - desParcela – Descrição da Parcela - String
+  - Taxa – Multiplicador referente ao Juros da Parcela - Decimal
+  - Valor – Valor da Fatura (Original sem Juros) - Decimal
+  - ValorJuros – Valor Calculado de Juros - Decimal
+  - TaxaFixa – Valor Taxa Fixa (Não Obrigatório) - Decimal em Reais
+  - ValorTotal – Valor Total da Transação (Somatório do 'Valor' + 'ValorJuros' + 'TaxaFixa') - Decimal
 
 	
 
