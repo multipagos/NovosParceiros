@@ -64,7 +64,7 @@ Seguem detalhes sobre os campos que precisam ser enviados.
   "DetalhesCliente": {
       "NomeCliente": "José Tadeu Bijus",
       "CodigoCliente": "123456789",
-      "Cpf": "01234567890",
+      "CpfCnpj": "01234567890",
       "Telefone": "21987654321",
       "Email": "emaildocliente@teste.com",
       "DataNascimento": "2000-01-01",
@@ -107,7 +107,7 @@ Seguem detalhes sobre os campos que precisam ser enviados.
 - DetalhesCliente - Informações sobre o cliente
 	- NomeCliente - Nome completo do cliente
 	- CodigoCliente - Unidade Consumidora ou Identificação do Cliente
-	- Cpf - Cadastro de Pessoa Física
+	- CpfCnpj - Cadastro de Pessoa Física ou Cadastro Nacional de Pessoa Jurídica
 	- Telefone - Número de telefone com DDD. Ex: 99999999999
 	- Email - Endereço eletrônico do cliente
 	- DataNascimento - Data de Nascimento do Cliente
