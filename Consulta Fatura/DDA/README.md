@@ -140,6 +140,7 @@ Para isso, após autenticado com sucesso pela API de geração de Token, realize
 	- 1 - Bearer Token
 	- 2 - Basic Auth
 	- 3 - Bearer Cognito AWS
+  -	4 - Application Token (token não expira)
 	- Caso você não utilize nenhuma dessas autenticações, favor sinalizar para viabilizarmos o desenvolvimento.
 - objetoAutenticacao - Campo string indicando as informações necessárias para autenticarmos em sua 'url'. Obrigatório se 'tipoAutenticacao' for diferente de 0.
 
@@ -155,6 +156,9 @@ Para isso, após autenticado com sucesso pela API de geração de Token, realize
 
 - TipoAutenticacao = 3 (Bearer Cognito AWS)
 	Ex: "{'user': 'nossoUsuarioDeAutenticacao','password': 'nossaSenhaDeAutenticacao', 'scope': 'escopo'}" 
+  
+- TipoAutenticacao = 4 (Application Token)
+	Ex: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6IjEiLCJuYmYiOjE2MTU5MDg0MjQsImV4cCI6MTYxNTkwODQ4NCwiaWF0IjoxNjE1OTA4NDI0fQ.Iy7m-U1KPomjQTh2tN3X5gGXn6LvE3W4H3dBRnc5-7s" 
 ```
 
 - urlAutenticacao - Url completa do endpoint de autenticação.Obrigatório se 'tipoAutenticacao' for diferente de 0. Exemplo: "https://sandbox.multipagos.com.br/api/Multipagos/Token"

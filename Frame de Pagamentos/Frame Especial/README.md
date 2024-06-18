@@ -78,7 +78,7 @@ Seguem detalhes sobre os campos que precisam ser enviados.
          "Pais": "BR"
       }
    },
-  "parcelas": [
+  "Parcelas": [
     {
       "numParcela": 5,
       "desParcela":"5x",
@@ -135,14 +135,14 @@ Seguem detalhes sobre os campos que precisam ser enviados.
 {
     "sucesso": true,
     "mensagem": "Processo realizado com sucesso.",
-    "data": {
-        "frameLink": "https://app-framespa-hml.azurewebsites.net/CardFormCustom?token=20220215BB4B51B73011467E9F41CCD76DB52D72",
-	"frameToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoiTXVsdGlwYWdvc0lmcmFtZSIsIm5iZiI6MTY0NzgzMTU4NSwiZXhwIjoxOTYzMTkxNTg1LCJpc3MiOiJIdWJQYWdhbWVudG8iLCJhdWQiOiJFdmVyeW9uZSJ9.yHciL7W5UMtoUpuaz0pyyawAxABrjMgodzmkrxbC-is",
-	"orderId": "LTYz0DA5MzQ3Mwaa"
+    "dados": {
+      "frameLink": "https://app-framespa-hml.azurewebsites.net/CardFormCustom?token=20220215BB4B51B73011467E9F41CCD76DB52D72",
+      "frameToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoiTXVsdGlwYWdvc0lmcmFtZSIsIm5iZiI6MTY0NzgzMTU4NSwiZXhwIjoxOTYzMTkxNTg1LCJpc3MiOiJIdWJQYWdhbWVudG8iLCJhdWQiOiJFdmVyeW9uZSJ9.yHciL7W5UMtoUpuaz0pyyawAxABrjMgodzmkrxbC-is",
+      "orderId": "LTYz0DA5MzQ3Mwaa"
     },
-    "totalDeRegistros": 1,
-    "mensagemErro": "",
-    "validadeToken": "Token expira em : 59 minutos e 1 segundos."
+    "totalRegistros": 1,
+    "validadeToken": "Token expira em : 59 minutos e 1 segundos.",
+    "dataValidadeToken": "2024-06-07T12:17:14-03:00"
 }
 StatusCode: 200
 ```
@@ -151,7 +151,7 @@ StatusCode: 200
 {
     "sucesso": false,
     "mensagem": "Não foi possível efetuar esta ação. Tente mais tarde.",
-    "totalDeRegistros": 0,
+    "totalRegistros": 0,
     "mensagemErro": "O campo (X) é inválido.",
     "validadeToken": "Token expira em : 59 minutos e 1 segundos."
 }
@@ -163,7 +163,7 @@ StatusCode: 400
 {
     "sucesso": false,
     "mensagem": "Não foi possível efetuar esta ação. Tente mais tarde.",
-    "totalDeRegistros": 0,
+    "totalRegistros": 0,
     "mensagemErro": "O campo (X) é obrigatório e não foi preenchido.",
     "validadeToken": "Token expira em : 59 minutos e 1 segundos."
 }
@@ -175,7 +175,7 @@ StatusCode: 400
 {
     "sucesso": false,
     "mensagem": "Não foi possível efetuar esta ação. Tente mais tarde.",
-    "totalDeRegistros": 0,
+    "totalRegistros": 0,
     "mensagemErro": "Ocorreu um erro no Cod Barras: 84670000002203602962021102518700000987654321. Motivo: Não Autorizada - Já Recebido",
     "validadeToken": "Token expira em : 59 minutos e 1 segundos."
 }
@@ -187,7 +187,7 @@ StatusCode: 400
 {
     "sucesso": false,
     "mensagem": "Não foi possível efetuar esta ação. Tente mais tarde.",
-    "totalDeRegistros": 0,
+    "totalRegistros": 0,
     "mensagemErro": "Ocorreu um erro no Cod Barras: 84670000002203602962021102518700000987654321. Motivo: Não Autorizada - Vencida",
     "validadeToken": "Token expira em : 59 minutos e 1 segundos."
 }
@@ -199,7 +199,7 @@ StatusCode: 400
 {
     "sucesso": false,
     "mensagem": "Não foi possível efetuar esta ação. Tente mais tarde.",
-    "totalDeRegistros": 0,
+    "totalRegistros": 0,
     "mensagemErro": "Ocorreu um erro no Cod Barras: 84670000002203602962021102518700000987654321. Motivo: Não Autorizada - Empresa não Autorizada",
     "validadeToken": "Token expira em : 59 minutos e 1 segundos."
 }
@@ -211,7 +211,7 @@ StatusCode: 400
 {
     "sucesso": false,
     "mensagem": "Não foi possível efetuar esta ação. Tente mais tarde.",
-    "totalDeRegistros": 0,
+    "totalRegistros": 0,
     "mensagemErro": "Ocorreu um erro no Cod Barras: 84670000002203602962021102518700000987654321. Motivo: Não Autorizada - Sem valor",
     "validadeToken": "Token expira em : 59 minutos e 1 segundos."
 }
@@ -223,7 +223,7 @@ StatusCode: 400
 {
     "sucesso": false,
     "mensagem": "Falha ao obter o frame de pagamentos.",
-    "totalDeRegistros": 0,
+    "totalRegistros": 0,
     "mensagemErro": "Nenhuma forma de pagamento encontrada",
     "validadeToken": "Token expira em : 59 minutos e 1 segundos."
 }
@@ -296,6 +296,7 @@ Para isso, após autenticado com sucesso pela API de geração de Token, realize
 	- 1 - Bearer Token
 	- 2 - Basic Auth
 	- 3 - Bearer Cognito AWS
+  -	4 - Application Token (token não expira)
 	- Caso você não utilize nenhuma dessas autenticações, favor sinalizar para viabilizarmos o desenvolvimento.
 - objetoAutenticacao - Campo string indicando as informações necessárias para autenticarmos em sua 'url'. Obrigatório se 'tipoAutenticacao' for diferente de 0.
 
@@ -311,6 +312,9 @@ Para isso, após autenticado com sucesso pela API de geração de Token, realize
 
 - TipoAutenticacao = 3 (Bearer Cognito AWS)
 	Ex: "{'user': 'nossoUsuarioDeAutenticacao','password': 'nossaSenhaDeAutenticacao', 'scope': 'escopo'}" 
+  
+- TipoAutenticacao = 4 (Application Token)
+	Ex: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6IjEiLCJuYmYiOjE2MTU5MDg0MjQsImV4cCI6MTYxNTkwODQ4NCwiaWF0IjoxNjE1OTA4NDI0fQ.Iy7m-U1KPomjQTh2tN3X5gGXn6LvE3W4H3dBRnc5-7s" 
 ```
 
 - urlAutenticacao - Url completa do endpoint de autenticação.Obrigatório se 'tipoAutenticacao' for diferente de 0. Exemplo: "https://sandbox.multipagos.com.br/api/Multipagos/Token"
