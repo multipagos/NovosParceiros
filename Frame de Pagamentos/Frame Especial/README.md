@@ -78,7 +78,8 @@ Seguem detalhes sobre os campos que precisam ser enviados.
          "Pais": "BR"
       }
    },
-  "Parcelas": [
+  "Parcelas": 
+  [
     {
       "numParcela": 5,
       "desParcela":"5x",
@@ -86,7 +87,14 @@ Seguem detalhes sobre os campos que precisam ser enviados.
       "valor": 220.36,
       "valorJuros": 24.24,
       "taxaFixa": 2.00,
+      "valorParcela": 49.32,
       "valorTotal": 246.60
+    }
+  ],  
+  "MerchantDefinedData":[
+    {
+      "id": "1",
+      "value": "1"
     }
   ]
 }
@@ -123,11 +131,14 @@ Seguem detalhes sobre os campos que precisam ser enviados.
   - numParcela – Número da Parcela - Inteiro
   - desParcela – Descrição da Parcela - String
   - Taxa – Multiplicador referente ao Juros da Parcela - Decimal
-  - Valor – Valor da Fatura (Original sem Juros) - Decimal
+  - Valor – Somatório dos valores das Faturas (Original sem Juros) - Decimal
   - ValorJuros – Valor Calculado de Juros - Decimal
   - TaxaFixa – Valor Taxa Fixa (Não Obrigatório) - Decimal em Reais
+  - ValorParcela - Valor referente à parcela apresentada ao cliente
   - ValorTotal – Valor Total da Transação (Somatório do 'Valor' + 'ValorJuros' + 'TaxaFixa') - Decimal
-
+- MerchantDefinedData - Lista de regras de Anti Fraude
+  - id - Código de identificação do MDD
+  - value - Informação correspondente ao MDD
 	
 
 **Resultado com sucesso:**
