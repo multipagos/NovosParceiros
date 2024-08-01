@@ -91,7 +91,8 @@ Seguem detalhes sobre os campos que precisam ser enviados.
       "valorTotal": 246.60
     }
   ],  
-  "MerchantDefinedData":[
+  "MerchantDefinedData":
+  [
     {
       "id": "1",
       "value": "1"
