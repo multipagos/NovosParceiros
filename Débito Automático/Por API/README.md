@@ -528,3 +528,29 @@ _No exemplo abaixo, o campo "token" é o campo que precisaria ser indicado em "c
 }
 ```
 **Agendamos uma rotina para realizar a RemessaFake para o WebHook sob demanda.**
+
+
+# **Descadastramento de WebHook**
+Caso deseje descadastrar sua assinatura de Webhook em nosso sistema para não mais receber mensagens de webhooks, você poderá descadastrar seguinte os seguintes passos: 
+- PUT /api/v1/WebHook/DescadastrarWebhook/{id}
+
+**Orientação dos campos:**
+- id - Identificação gerada para a sua assinatura recebido no cadastramento.
+
+**Resultado com sucesso:**
+```
+{
+  "sucesso": true,
+  "mensagem": "Assinatura Descadastrada com sucesso.",
+  "validadeToken": "Token expira em : 59 minutos e 37 segundos."
+}
+```
+
+**Resultado com falha:**
+```
+{
+  "sucesso": false,
+  "mensagem": "Não foi possível realizar o descadastramento. Tente novamente mais tarde.",
+  "validadeToken": "Token expira em : 59 minutos e 37 segundos."
+}
+```
