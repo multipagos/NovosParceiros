@@ -54,6 +54,7 @@ Seguem detalhes sobre os campos que precisam ser enviados.
   "FormaPagamento": 4,
   "TipoTransacao": 12,
   "Origem": 60,
+  "Canal": "EnergisaON",
   "Arrecadacoes": [
     {
        "CodigoInformado": "84670000002203602962021102518700000987654321",
@@ -109,6 +110,7 @@ Seguem detalhes sobre os campos que precisam ser enviados.
 - FormaPagamento - Identificador da Forma de Pagamento. Usar 4 (Pagamento em Cartão de Crédito).
 - TipoTransacao - Identificador do Tipo de Transacação. Usar 12 (Cartão de Crédito Parcelado pela Administradora).
 - Origem - Identificador da origem da transação. Usar 60 E-Commercer
+- Canal - Identificador do canal utilizado
 - Arrecadacoes - Lista de documentos de arrecadação.
 	- CodigoInformado - Código de barras. Pode ser tanto 44 ou 48 caracteres.
 	- Valor - Valor da fatura.
