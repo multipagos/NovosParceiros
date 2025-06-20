@@ -55,6 +55,7 @@ Seguem detalhes sobre os campos que precisam ser enviados.
   "TipoTransacao": 12,
   "Origem": 60,
   "Canal": "EnergisaON",
+  "Antecipado": true,
   "Arrecadacoes": [
     {
        "CodigoInformado": "84670000002203602962021102518700000987654321",
@@ -107,10 +108,13 @@ Seguem detalhes sobre os campos que precisam ser enviados.
 ```
 
 **Orientação dos campos:**
-- FormaPagamento - Identificador da Forma de Pagamento. Usar 4 (Pagamento em Cartão de Crédito).
+- FormaPagamento - Identificador da Forma de Pagamento. Usar:
+	- 4 (Pagamento em Cartão de Crédito)
+ 	- 1 (Pagamento Cartão de Débito)
 - TipoTransacao - Identificador do Tipo de Transacação. Usar 12 (Cartão de Crédito Parcelado pela Administradora).
 - Origem - Identificador da origem da transação. Usar 60 E-Commercer
 - Canal - Identificador do canal utilizado
+- Antecipado – Identifica se é uma transação a ter repasse antecipado ou não. Campo boleano (true ou false).
 - Arrecadacoes - Lista de documentos de arrecadação.
 	- CodigoInformado - Código de barras. Pode ser tanto 44 ou 48 caracteres.
 	- Valor - Valor da fatura.
