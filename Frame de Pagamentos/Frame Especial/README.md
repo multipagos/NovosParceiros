@@ -111,8 +111,10 @@ Seguem detalhes sobre os campos que precisam ser enviados.
 - FormaPagamento - Identificador da Forma de Pagamento. Usar:
 	- 4 (Pagamento em Cartão de Crédito)
  	- 1 (Pagamento Cartão de Débito)
-- TipoTransacao - Identificador do Tipo de Transacação. Usar 12 (Cartão de Crédito Parcelado pela Administradora).
-- Origem - Identificador da origem da transação. Usar 60 E-Commercer
+- TipoTransacao - Identificador do Tipo de Transacação. Usar:
+	- 12 (Cartão de Crédito Parcelado pela Administradora).
+ 	- 20 (Cartão de Débito)
+- Origem - Identificador da origem da transação. Usar 60 E-Commerce
 - Canal - Identificador do canal utilizado
 - Antecipado – Identifica se é uma transação a ter repasse antecipado ou não. Campo boleano (true ou false).
 - Arrecadacoes - Lista de documentos de arrecadação.
