@@ -14,11 +14,11 @@ Disponibilizamos um ambiente SandBox para que você possa realizar os testes. Fi
 
 # **Autenticação**
 Processo de obtenção de token que irá garantir a autorização na utilização dos demais serviços.
-- POST /api/Multipagos/Token
+- POST /api/v2/Token/login
 ```html
 {
-  "pdv": "6000",
-  "terminal": "48B20B9C-69B9-443E-9090-A5CE730DFA76"
+  "pdv": 8000,
+  "terminal": "330f87d4-718c-4962-a3e3-6c07e8c391c0"
 }
 ```
 **Pdv e Terminal serão fornecidos.**
@@ -47,7 +47,7 @@ StatusCode: 400
 # **Gerar QrCode PIX**
 Para gerar o QrCode contendo as informações corretas de recebimento da fatura, preencha os campos abaixo na requisição:
 
-- POST /api/v1/Pix/GenerateQrCode
+- POST /api/v2/Pix/GenerateQrCode
 
 ```html
 {
