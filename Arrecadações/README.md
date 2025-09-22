@@ -19,8 +19,8 @@ Processo de obtenção de token que irá garantir a autorização na utilizaçã
 - POST /api/Multipagos/Token
 ```html
 {
-  "pdv": "6000",
-  "terminal": "48B20B9C-69B9-443E-9090-A5CE730DFA76"
+  "pdv": 8000,
+  "terminal": "6f579b30-46fb-456b-a81b-21e4304a8926"
 }
 ```
 **Pdv e Terminal serão fornecidos.**
