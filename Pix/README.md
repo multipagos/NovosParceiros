@@ -18,7 +18,7 @@ Processo de obtenção de token que irá garantir a autorização na utilizaçã
 ```html
 {
   "pdv": 8000,
-  "terminal": "86dacea8-c9fb-4bfd-9a34-70d2273e198e"
+  "terminal": "6f579b30-46fb-456b-a81b-21e4304a8926"
 }
 ```
 **Pdv e Terminal serão fornecidos.**
