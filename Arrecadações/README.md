@@ -16,7 +16,7 @@ Disponibilizamos um ambiente SandBox para que você possa realizar os testes. Fi
 
 # Autenticação
 Processo de obtenção de token que irá garantir a autorização na utilização dos demais serviços.
-- POST /api/Multipagos/Token
+- POST /api/v2/Token/login
 ```html
 {
   "pdv": 8000,
