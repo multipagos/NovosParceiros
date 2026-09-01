@@ -205,7 +205,7 @@ Content-Type: application/json
   "Pendencias": [
     {
       "Vencimento": "2022-08-08",
-      "PixCopyPaste": "00020101021226580014br.gov.bcb.pix013650ca5e8c-281d-4d50-ae90-c2f1f0ec23b3520400005303986540554.895802BR5910MULTIPAGOS6002RJ6223051960001202207131619206304B334",
+      "Pix": "00020101021226580014br.gov.bcb.pix013650ca5e8c-281d-4d50-ae90-c2f1f0ec23b3520400005303986540554.895802BR5910MULTIPAGOS6002RJ6223051960001202207131619206304B334",
       "Valor": 66.34,
       "Empresa": "CLARO"
     }
@@ -217,7 +217,7 @@ Content-Type: application/json
 - IdentificadorCliente - Identificação do cliente (CPF/CNPJ).
 - Pendencias - Lista de faturas em aberta do cliente
 	- DataVencimento - Data de vencimento da fatura mais recente.
-	- PixCopyPaste - Pix copia e cola para pagamento.
+	- Pix - Pix para pagamento.
 	- Valor - Valor da fatura.
 	- Empresa - Empresa referente à fatura.
 
