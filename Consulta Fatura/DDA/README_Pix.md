@@ -6,9 +6,28 @@ Através da documentação abaixo você será capaz de utilizar os serviços Mul
 
 Qualquer dúvida que possa ter, fique à vontade de enviar um e-mail para team-mpagos@multipagos.com.br que iremos te ajudar.
 
+# Processo via Arquivo (grandes volumes)
+O processo via arquivo é a opção recomendada para o processamento de grandes volumes de consultas.
 
+A carga é realizada por meio de um arquivo no formato .txt, contendo exclusivamente os números de CPF/CNPJ dos clientes a serem consultados.
 
-# SandBox
+A partir desse arquivo, é realizada a identificação dos clientes que efetivamente possuem vínculo com as Empresas Conveniadas habilitadas. Em seguida, é executado 
+o processo de consulta inteligente de faturas em aberto para esses clientes.
+
+E diariamente, ao encontrar faturas em aberto, é disponibilizado um arquivo de retorno contendo os detalhes das faturas identificadas.
+
+| Exemplo | Descrição |
+|--|--|
+| 12345678900 | CPF/CNPJ do Cliente |
+| 848600000007723401622022305171474945964149211111 | Fatura Encontrada |
+| CLARO | Empresa Conveniada |
+| 123.45 | Valor da Fatura |
+| 2026-01-01 | Data de Vencimento |
+| 123456 | Identificação da Fatura |
+
+*Exemplo de arquivo em anexo.
+
+# Processo via API - SandBox
 Disponibilizamos um ambiente SandBox para que você possa realizar os testes. Fique à vontade para usar!
 - Url SandBox: https://sandbox.multipagos.com.br
 
